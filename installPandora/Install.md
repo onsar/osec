@@ -22,6 +22,8 @@ cambiando la linea “DocumentRoot /var/www/pandora_console”. Y se reinicia el
 
 Luego de reiniciar el servicio abrimos un navegador y vamos a la ip del servidor (o a localhost si estamos en el servidor)
   <br><br>
-  <code>http://192.168.xxx.xxx/install.php</code><br><br>
+  <code>http://192.168.xxx.xxx/install.php</code><br>
+  o<br>
+  <code>http://localhost/install.php</code><br><br>
   
 En esta instalacion debemos darle usuario y clave de la base de datos MySQL a la consola de pandora.
