@@ -1,0 +1,20 @@
+formato json del mensaje inicial de los sensores detectados
+añade la resolución configurada para los sensores
+version 01 2016-11-08
+
+{
+	"maint_data_temp_sensor": {
+		"sensor_0": {
+			"id": "28FF0400701605C1",
+			"name": " DEPOSITO GENERAL",
+			"res": "9",
+			"temp_c": "24.50"
+		},
+		"sensor_1": {
+			"id": "28FFE65280160494",
+			"name": " DEPOSITO PRIMERA PLANTA",
+			"res": "9",
+			"temp_c": "24.00"
+		}
+	}
+}

@@ -1,0 +1,9 @@
+mensaje inicial de los sensores detectados
+version 01 2016-11-08
+
+{
+	"maint_search_temp_sensor": {
+		"devices_found": "YES",
+		"num_devices:": "2"
+	}
+}
