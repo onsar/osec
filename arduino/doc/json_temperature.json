@@ -1,0 +1,22 @@
+formato json de la alarma de temperatura 
+version 01 2016-11-07
+
+{"data_sensor":{
+    "code":"50001",
+    "number":"001",
+    "name":"San Pablo",
+    "time_0x":"16551",
+    "temperature_sensors":{
+        "sensor_0":{
+            "id":"28FF0400701605C1",
+            "name":" DEPOSITO GENERAL",
+            "temp_c":"23.00"
+            },
+        "sensor_1":{
+            "id":"28FFE65280160494",
+            "name":" DEPOSITO PRIMERA PLANTA",
+            "temp_c":"23.00"
+        }
+    }
+}
+}
