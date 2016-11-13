@@ -29,5 +29,5 @@ Luego de reiniciar el servicio abrimos un navegador y vamos a la ip del servidor
 En esta instalacion debemos darle usuario y clave de la base de datos MySQL a la consola de pandora. <br>
 Es importante escribir la contraseña que nos da pandora durante la instalacion, en:
   <br><br>
-  <code># /etc/pandora/pandora_server.conf</code>
+  <code># /etc/pandora/pandora_server.conf</code><br>
   <code>systemctl restart pandora_server.service</code>
