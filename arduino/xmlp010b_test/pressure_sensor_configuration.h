@@ -1,0 +1,25 @@
+#ifndef pressure_sensor_configuration_h
+#define pressure_sensor_configuration_h
+
+
+#define PRESSURE_DEVICES_NUMBER 3
+
+#define  PRESSURE_INPUT_1  0
+#define  PRESSURE_SENSOR_NAME_1 " ENTRADA PLACAS" 
+
+#define  PRESSURE_INPUT_2  1
+#define  PRESSURE_SENSOR_NAME_2 " SALIDA PLACAS" 
+
+#define  PRESSURE_INPUT_3  5
+#define  PRESSURE_SENSOR_NAME_3 " CALEFACCION CENTRAL" 
+
+#define  PRESSURE_INPUT_4  99
+#define  PRESSURE_SENSOR_NAME_4 " NOMBRE DESCONOCIDO" 
+
+#define  PRESSURE_INPUT_5  99
+#define  PRESSURE_SENSOR_NAME_5 " NOMBRE DESCONOCIDO" 
+
+#define  PRESSURE_INPUT_6  99
+#define  PRESSURE_SENSOR_NAME_6 " NOMBRE DESCONOCIDO" 
+
+#endif

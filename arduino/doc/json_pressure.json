@@ -1,0 +1,29 @@
+formato json del mensaje de presion 
+Este mensaje se manda perodicamente
+version 01 2016-11-16
+
+{
+	"data_sensor": {
+		"code": "50001",
+		"number": "001",
+		"name": "San Pablo",
+		"time_0x": "1144",
+		"pressure_sensors": {
+			"sensor_0": {
+				"id": "0",
+				"name": " ENTRADA PLACAS",
+				"press": "2736"
+			},
+			"sensor_1": {
+				"id": "1",
+				"name": " SALIDA PLACAS",
+				"press": "0"
+			},
+			"sensor_2": {
+				"id": "5",
+				"name": " CALEFACCION CENTRAL",
+				"press": "1364"
+			}
+		}
+	}
+}
