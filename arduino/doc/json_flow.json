@@ -1,0 +1,24 @@
+formato json del mensaje de caudal 
+Este mensaje se manda perodicamente
+version 01 2016-11-17
+
+{
+	"data_sensor": {
+		"code": "50001",
+		"number": "001",
+		"name": "San Pablo",
+		"time_0x": "2119",
+		"flow_sensors": {
+			"sensor_0": {
+				"id": "2",
+				"name": " ENTRADA DE AGUA",
+				"l_hore": "1344"
+			},
+			"sensor_1": {
+				"id": "3",
+				"name": " AGUA CALIENTE",
+				"l_hore": "1336"
+			}
+		}
+	}
+}

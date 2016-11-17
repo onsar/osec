@@ -5,7 +5,7 @@
 
 // variable declaration
 int pinPressureSensor[PRESSURE_DEVICES_NUMBER];
-int numberOfDevices;
+int numberOfDevices; // Creo que sobra!!!!!!!!
 
 // Function Prototypes
 void pressureSensorMessage();
