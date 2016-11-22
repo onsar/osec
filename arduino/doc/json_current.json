@@ -1,0 +1,29 @@
+formato json del mensaje de Intensidad 
+Este mensaje se manda perodicamente
+version 01 2016-11-22
+
+{
+	"data_sensor": {
+		"code": "50001",
+		"number": "001",
+		"name": "San Pablo",
+		"time_0x": "8663",
+		"current_sensors": {
+			"sensor_0": {
+				"id": "0",
+				"name": " INTENSIDAD DE ENTRADA PLACAS",
+				"curr": "2736"
+			},
+			"sensor_1": {
+				"id": "1",
+				"name": " INTENSIDAD DE SALIDA",
+				"curr": "4092"
+			},
+			"sensor_2": {
+				"id": "5",
+				"name": " INTENSIDAD TOTAL",
+				"curr": "1364"
+			}
+		}
+	}
+}

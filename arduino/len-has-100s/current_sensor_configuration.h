@@ -1,0 +1,25 @@
+#ifndef current_sensor_configuration_h
+#define current_sensor_configuration_h
+
+
+#define CURRENT_DEVICES_NUMBER 3
+
+#define  CURRENT_INPUT_1  0
+#define  CURRENT_SENSOR_NAME_1 " INTENSIDAD DE ENTRADA PLACAS" 
+
+#define  CURRENT_INPUT_2  1
+#define  CURRENT_SENSOR_NAME_2 " INTENSIDAD DE SALIDA" 
+
+#define  CURRENT_INPUT_3  5
+#define  CURRENT_SENSOR_NAME_3 " INTENSIDAD TOTAL" 
+
+#define  CURRENT_INPUT_4  99
+#define  CURRENT_SENSOR_NAME_4 " NOMBRE DESCONOCIDO" 
+
+#define  CURRENT_INPUT_5  99
+#define  CURRENT_SENSOR_NAME_5 " NOMBRE DESCONOCIDO" 
+
+#define  CURRENT_INPUT_6  99
+#define  CURRENT_SENSOR_NAME_6 " NOMBRE DESCONOCIDO" 
+
+#endif
