@@ -6,12 +6,9 @@
  * 
  */
 
-#include <OneWire.h>
-#include <DallasTemperature.h>
 #include "temperature_sensor_configuration.h"
+#include "temperature_sensor_ds.h"
 
-// Data wire is plugged into port 2 on the Arduino
-#define ONE_WIRE_BUS 2
 
 DeviceAddress tempDeviceAddress;
 
@@ -102,6 +99,7 @@ void setup(void)
 void loop(void)
 { 
   temperatureSensorMessage();
+  delay(1000);
 }
 
 
