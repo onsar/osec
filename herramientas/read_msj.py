@@ -1,4 +1,6 @@
 #! /usr/bin/python
+# Lee un número de 0 a 100 desde cliente
+# Lo transforma en un xml con formato pandora
 
 import socket
 from xml.etree.ElementTree import Element, SubElement, Comment, tostring

@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# Primera prueba para escribir msj de wifi
 
 import socket
 import time

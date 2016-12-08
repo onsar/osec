@@ -1,4 +1,5 @@
 #! /usr/bin/python
+# Primera prueba para recibir desde wifi msj de arduino
 
 import socket
 
