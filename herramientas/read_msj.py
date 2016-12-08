@@ -7,8 +7,6 @@ import time
 
 
 TCP_IP = '0.0.0.0'
-host = socket.gethostname()
-print "hostname:------->", host
 
 TCP_PORT = 7000
 BUFFER_SIZE = 10  # Normally 1024, but we want fast response
@@ -22,6 +20,21 @@ timezone_offset='0'
 address='192.168.1.77'
 
 
+if os.path.isfile('read_msj.log'):
+    os.remove('read_msj.log')
+    with open('read_msj.log', 'w') as log_:
+        log_.write('El fichero de log esta creado de nuevo \n')
+else:
+    with open('read_msj.log', 'w') as log_:
+        log_.write('inicio de fichero de log \n')
+
+
+host = socket.gethostname()
+
+with open('read_msj.log', 'a') as log_:
+    log_.write('hostname:------->' + host + '\n')
+
+
 while 1:
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -29,7 +42,9 @@ while 1:
     s.listen(2)
     try:
         conn, addr = s.accept()
-        print 'Connection address:', addr
+
+        with open('read_msj.log', 'a') as log_:
+            log_.write('Connection address:' + str(addr)+'\n')
 
         data = conn.recv(BUFFER_SIZE)
         if not data: break
@@ -56,8 +71,14 @@ while 1:
         conn.send(MESSAGE)  # echo
         with open('/var/spool/pandora/data_in/'+filename, 'w') as file_:
                 file_.write(tostring(agent_data))
-        print tostring(agent_data)
+
+        # print tostring(agent_data)
+        with open('read_msj.log', 'a') as log_:
+            log_.write(tostring(agent_data)+'\n')
         conn.close()
+        
     except:
-        print "error_a:"
+        with open('read_msj.log', 'a') as log_:
+            log_.write(( 'Error: %s --> '+str(sys.exc_info()[0]) +'\n' ))
+            
 conn.close()
