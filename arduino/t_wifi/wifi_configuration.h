@@ -8,7 +8,8 @@
 
 #define SSID "casaelobrero" //Nombre de la Red Wifi a la que nos conectamos
 #define PASSWORD "lacosamasbonitadelmundo" //Contraseña de la Red Wifi
-#define HOST_NAME "192.168.1.128" // thingspeak.com
+// #define HOST_NAME "192.168.1.128" 
+#define HOST_NAME "193.146.117.35"
 
 #define HOST_PORT 7000
 

@@ -1,0 +1,14 @@
+ 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<agent_data address="192.168.1.77" agent_name="test_iot" description="" group="" interval="3" os_name="iot" timestamp="2016-12-08 11:26:26" timezone_offset="0" version="4.1(Build 130708)">
+   <!--Generated for PyMOTW-->
+   <module>
+      <name>sacos_de_patata</name>
+      <description>User CPU Usage (%)</description>
+      <type>generic_data</type>
+      <min>0</min>
+      <max>100</max>
+      <data>73</data>
+   </module>
+</agent_data>
