@@ -5,6 +5,9 @@ from xml.etree.ElementTree import Element, SubElement, Comment, tostring
 import datetime
 import time
 
+import os.path
+import sys
+
 
 TCP_IP = '0.0.0.0'
 
