@@ -50,7 +50,7 @@ while 1:
 
             module=SubElement(agent_data, 'module')
             name=SubElement(module,'name')
-            name.text='temperatura_salida'
+            name.text='temperatura_salida_1'
             description=SubElement(module,'description')
             description.text='temperatura de salida del panel'
             type_=SubElement(module,'type')
