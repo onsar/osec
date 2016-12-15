@@ -5,7 +5,7 @@
 #include "wifi_client.h"
 
 
-
+int attemps_number =0;
 
 bool setupWifi(ESP8266S &wifi)
 { 
@@ -50,11 +50,16 @@ bool connectTCPWifi(ESP8266S &wifi)
 {
 
     if (wifi.createTCP(HOST_NAME, HOST_PORT)) {
+        attemps_number = 0;        
         Serial.print("create tcp ok\r\n");
+
     } 
     else {
+        attemps_number += 1;        
         Serial.print("create tcp err\r\n");
-    }
+        if ( attemps_number > 10 ){attemps_number = 0; setupWifi(wifi);}
+          
+    } 
     
     Serial.print("setup end\r\n");
 }

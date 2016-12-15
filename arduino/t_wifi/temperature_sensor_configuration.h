@@ -3,7 +3,7 @@
 #define temperature_sensor_configuration_h
 
 // Data wire is plugged into port 4 on the Arduino
-#define ONE_WIRE_BUS 4
+#define ONE_WIRE_BUS 6
 
 // Lower resolution
 #define TEMPERATURE_PRECISION 9

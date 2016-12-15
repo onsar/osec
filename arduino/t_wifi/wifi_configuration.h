@@ -12,7 +12,7 @@
 #define SSID "movil-oscar" //Nombre de la Red Wifi a la que nos conectamos
 #define PASSWORD "Latorre64" //Contraseña de la Red Wifi
 
-// #define HOST_NAME "192.168.1.128" 
+// #define HOST_NAME "192.168.1.130" 
 #define HOST_NAME "193.146.117.35"
 
 #define HOST_PORT 7000

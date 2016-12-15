@@ -23,7 +23,7 @@
 #include "temperature_sensor.h"
 
 // Para la serialización de wifi
-SoftwareSerial mySerial(3, 2); /* RX:D3, TX:D2 */
+SoftwareSerial mySerial(5, 4); /* RX:D3, TX:D2 */
 ESP8266S wifi_m(mySerial);
 
 
