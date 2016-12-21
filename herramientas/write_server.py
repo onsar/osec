@@ -1,13 +1,12 @@
 #!/usr/bin/env python
-# Escribe un número creciene de 1 a 100 en el servidor
 
 import socket
 import time
 
 
 # TCP_IP = '192.168.1.128'
-TCP_IP = '193.146.117.35'
-TCP_PORT = 7000
+TCP_IP = '192.168.1.130'
+TCP_PORT = 2121
 BUFFER_SIZE = 1024
 MESSAGE = "%d"
 # MESSAGE = "este es el mensaje numero -> %d!"
