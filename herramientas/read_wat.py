@@ -9,8 +9,8 @@ import socket
 import os.path
 import sys
 
-TCP_IP = '0.0.0.0'
-# TCP_IP = '192.168.1.128'
+# TCP_IP = '0.0.0.0'
+TCP_IP = '192.168.1.128'
 
 if os.path.isfile('read_wat.log'):
     os.remove('read_wat.log')
@@ -27,7 +27,7 @@ host = socket.gethostname()
 with open('read_wat.log', 'a') as log_:
     log_.write('hostname:------->' + host + '\n')
 
-TCP_PORT = 7000
+TCP_PORT = 8000
 BUFFER_SIZE = 1024  # Normally 1024, but we want fast response
 MESSAGE = "OK"
 
