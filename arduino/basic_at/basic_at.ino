@@ -8,37 +8,59 @@ END: DESCONECTA
 */
 
 #include <SoftwareSerial.h>
-#include "wifi.h"//Parametros de conexión 
+#include "wifi.h"           //Parametros de conexión 
 
-#define RXPIN 4
-#define TXPIN 5
 
-#define LEDPIN 13
+#define RXPIN 5
+#define TXPIN 4
+
 
 #define BPS 9600 //Velocidad de comunicaciones
 SoftwareSerial wifiSerial (RXPIN,TXPIN);
-
 #include "funciones.h"
+
+int wifi_conected = 1;// orden de reconexión
+
 
 void setup() 
 {
-  pinMode(LEDPIN,OUTPUT);
-  digitalWrite(LEDPIN,LOW);
   Serial.begin(BPS);
   wifiSerial.begin(BPS);
-  //Llamada a las funcioes para configurar la conexión wifi
-  configurarWifi(ordenesAT);
-  delay(2000);
-  //enviar datos
-  configurarWifi(ordenConexion);
-  enviarPost(ordenPost);
-  configurarWifi(ordenClose);
+  
 }
 
 void loop()
-{//funcion que recibe el mensaje que ha llegado por la wifi
+
+
+{
+ 
+  Serial.println("---------- orden(AT+CWJAP)--");
+  orden("AT+CWJAP?");
+ 
+  
+  if (wifiSerial.find("ERROR")) 
+    {
+      Serial.println("encontroado ERROR en CWJAP");
+      wifi_conected = 1;
+    }
+
+ Serial.print("algortmo: wifi_conected= ");
+ Serial.println(wifi_conected);
+
+if(wifi_conected != 0)
+  {
+      wifi_conected = 0;
+      configurarWifi(ordenesAT);  
+  }
+
   configurarWifi(ordenConexion);
+  delay(1000);
   enviarPost(ordenPost);
   configurarWifi(ordenClose);
+  
   delay(10000);
 }
+
+
+
+

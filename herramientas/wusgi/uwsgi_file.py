@@ -60,4 +60,4 @@ def application(env, start_response):
 
 
 
-    return [b"Hello World"]
+    return [b"APP_OK"]

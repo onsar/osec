@@ -2,6 +2,7 @@
 /*
 Configuración de la wifi
 */
+
 String ordenesAT[]=
 {
   "AT",
@@ -19,6 +20,7 @@ String ordenClose[]=
   "END"
 };
 
+
 String ordenConexion[]=
 {
   // "AT+CIPSTART=\"TCP\",\"192.168.2.221\",9090",
@@ -31,4 +33,12 @@ String ordenPost[]=
   "POST / HTTP/1.1\r\nContent-Length: 14\r\n\r\ntemperatura=14\r\n",
   "END"
 };
+
+String ordenCifsr[]=
+{
+  "AT+CWJAP?",
+  "AT+CIFSR",//ip asignada 
+  "END" 
+};
+
 
