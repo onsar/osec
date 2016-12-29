@@ -26,7 +26,8 @@ def application(env, start_response):
     request_body = env['wsgi.input'].read(request_body_size)
     d = parse_qs(request_body)
 
-    temperatura_r = d.get('temperatura', [''])[0]
+    # temperatura_r = d.get('temperatura', [''])[0]
+    temperatura_r = d.get('presion', [''])[0]
 
     #construir xml
     try:
