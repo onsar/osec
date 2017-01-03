@@ -66,7 +66,7 @@ def application(env, start_response):
         data_.text=str(value_r)
         
         
-        with open('/home/onsar/prueba_basic/generated_files/'+filename, 'w') as file_:
+        with open('/var/spool/pandora/data_in/'+filename, 'w') as file_:
             file_.write(tostring(agent_data))
     except:
         with open('generation_msj.log', 'a') as log_:
