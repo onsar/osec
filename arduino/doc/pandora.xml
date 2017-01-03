@@ -12,3 +12,18 @@
       <data>73</data>
    </module>
 </agent_data>
+
+
+
+<agent_data address="192.168.1.99" agent_name="50001-San Pablo" description="" group="" interval="30" os_name="iot" timestamp="2016-12-31 11:02:39" timezone_offset="0" version="4.1(Build 130708)">
+	<!--Generated for PyMOTW-->
+	<module>
+		<name>temperatura_critica</name>
+		<description>Entrada al panel principal</description>
+		<type>generic_data</type>
+		<min>0</min>
+		<max>999</max>
+		<data>86,5</data>
+	</module>
+</agent_data>
+
