@@ -36,7 +36,7 @@ def application(env, start_response):
     #construir xml
     try:
         timestamp='{:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now())
-        filename='generation_msj.'+str(time.time())+'.data'
+        filename='temperatura.'+str(time.time())+'.data'
 
         agent_data = Element('agent_data',{'description':'','group':'','os_name':'iot','interval':interval,'version':version,'timestamp':timestamp,'agent_name':agent_name,'timezone_offset':timezone_offset, 'address':address})
         
@@ -60,7 +60,7 @@ def application(env, start_response):
         min_.text='0'
         
         max_=SubElement(module,'max')
-        max_.text='999'
+        max_.text='0'
         
         data_=SubElement(module,'data')
         data_.text=str(value_r)
