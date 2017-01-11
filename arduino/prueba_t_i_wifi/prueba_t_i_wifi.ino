@@ -13,6 +13,8 @@ WifiBasic wifiBasic(& wifiSerialInit);
 
 #include "temperature_sensor.h"
 
+#include "current_sensor_configuration.h"
+
 
 void setup(void)
 { 
@@ -25,7 +27,8 @@ void setup(void)
 void loop(void)
 {
     buildTemperatureMessage();
-    delay(8000);
+    analogicalSensorMessage();
+    delay(4000);
 
 }
 

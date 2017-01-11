@@ -33,7 +33,7 @@ String ordenConexion[]=
 
 class WifiBasic {
   private:
-  int wifi_conected;
+  uint8_t wifi_conected;
   SoftwareSerial * wifiSerial;
   
   public:
@@ -65,10 +65,10 @@ bool WifiBasic::enviarPost(String name, String value)
   // entrara nombre y valor
 
   
-  int resultado;
+  uint8_t resultado;
 
   
-  Serial.println("---------- orden(AT+CWJAP)--");
+  Serial.println(F("---------- orden(AT+CWJAP)--"));
   orden("AT+CWJAP?");
   
   if (wifiSerial->find("ERROR")) 
@@ -77,13 +77,11 @@ bool WifiBasic::enviarPost(String name, String value)
       wifi_conected = 1;
     }
 
-  Serial.print("algoritmo: wifi_conected= ");
+  Serial.print(F("algoritmo: wifi_conected= "));
   Serial.println(wifi_conected);
 
   orden("AT+CWJAP?");
   respuesta();
-
-  
 
   if(wifi_conected != 0)
   {
@@ -93,21 +91,19 @@ bool WifiBasic::enviarPost(String name, String value)
 
   configurarWifi(ordenConexion);
   delay(1000);
-  
-  
 
   String cuerpo = "name=" + name + "&value=" + value;
-  Serial.println ("cuerpo_parte_1");
+  Serial.println (F("cuerpo_parte_1"));
   Serial.println (cuerpo);
   String lonPost = String(cuerpo.length());
-  Serial.println ("cuerpo_parte_lonPost");
+  Serial.println (F("cuerpo_parte_lonPost"));
   Serial.println (lonPost);
   
  
   String post = "POST / HTTP/1.1\r\nContent-Length:" + lonPost + "\r\n\r\n"+ cuerpo;
   cuerpo="";
 
-  Serial.println ("post_total= cabecera + cuerpo");
+  Serial.println (F("post_total= cabecera + cuerpo"));
   Serial.println (post);
   
   // envia el post
@@ -123,7 +119,7 @@ bool WifiBasic::enviarPost(String name, String value)
   if (wifiSerial->find(">"))
   
   {
-    Serial.println("---- > --");
+    Serial.println(F("---- > --"));
     wifiSerial-> write(post.c_str());
     wifiSerial-> write("\r\n");
     delay(3000);
@@ -133,20 +129,20 @@ bool WifiBasic::enviarPost(String name, String value)
     {    
       if (wifiSerial->find("SEND OK"))
       {
-        Serial.println("SEND OK");
+        Serial.println(F("SEND OK"));
         resultado=0;
         break;
       }
       else 
         {
-          Serial.println("SEND Failed");
+          Serial.println(F("SEND Failed"));
           resultado=1;        
         }
     }
   }
   else
   {
-    Serial.println("POST not writed");
+    Serial.println(F("POST not writed"));
     resultado=1;
   }
   post="";
@@ -159,7 +155,7 @@ bool WifiBasic::enviarPost(String name, String value)
 //Recibimos la lista de ordenes para configurar
 bool WifiBasic::configurarWifi(String *ordenes)
 {
-  Serial.println("---------- configurarWifi() --");
+  Serial.println(F("---------- configurarWifi() --"));
   uint8_t resultado=0;
   uint8_t i=0;
   while(ordenes[i]!="END")
@@ -167,7 +163,7 @@ bool WifiBasic::configurarWifi(String *ordenes)
     orden(ordenes[i]);
     delay(4000);
     int valor = respuesta();
-    Serial.print("configurarWifi()_rx_resultado:");
+    Serial.print(F("configurarWifi()_rx_resultado:"));
     Serial.println(valor);
     if (valor!=0)   { resultado=1;}
     i++;
@@ -196,9 +192,9 @@ bool WifiBasic::respuesta()
     c=wifiSerial->read();  
     recibido += String(c);
   }
-  Serial.println("** recibido_init");
+  Serial.println(F("** recibido_init"));
   Serial.print(recibido);
-  Serial.println("** recibido_end");
+  Serial.println(F("** recibido_end"));
   if (
       recibido.endsWith("ERROR\r\n")
     ||recibido.endsWith("FAIL\r\n")
@@ -208,7 +204,7 @@ bool WifiBasic::respuesta()
           resultado=1;
         }
   
-  Serial.print("respuesta()_tx_resultado=");
+  Serial.print(F("respuesta()_tx_resultado="));
   Serial.println(resultado);
   return resultado;
 
