@@ -1,0 +1,42 @@
+#######################################
+# Syntax Coloring Map For FaBoLCD-PCF8574-Library
+#######################################
+
+#######################################
+# Class (KEYWORD1)
+#######################################
+
+FaBoLCD_PCF8574	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+init	KEYWORD2
+begin	KEYWORD2
+clear	KEYWORD2
+home	KEYWORD2
+noDisplay	KEYWORD2
+display	KEYWORD2
+noBlink	KEYWORD2
+blink	KEYWORD2
+noCursor	KEYWORD2
+cursor	KEYWORD2
+scrollDisplayLeft	KEYWORD2
+scrollDisplayRight	KEYWORD2
+leftToRight	KEYWORD2
+rightToLeft	KEYWORD2
+autoscroll	KEYWORD2
+noAutoscroll	KEYWORD2
+setRowOffsets	KEYWORD2
+createChar	KEYWORD2
+setCursor	KEYWORD2
+write	KEYWORD2
+command	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+PCF8574_SLAVE_ADDRESS	LITERAL1
+

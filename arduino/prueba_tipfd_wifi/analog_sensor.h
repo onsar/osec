@@ -10,33 +10,40 @@
 
 #define DEVICES_NUMBER 5
 
-#define  SENSOR_NAME_1 "Intensidad total" // nombre del sensor
-#define  INPUT_1  0 // pin de entrada analógica
 
 // Factor de correccion = miliamperios maximos / milivoltios salida sensor 
 // es un entero
 // 100000/4000 = 25
+
+#define  SENSOR_NAME_1 "Intensidad total" // nombre del sensor
+#define  INPUT_1  0 // pin de entrada analógica
 #define  FACTOR_1 25;
 
 #define  SENSOR_NAME_2 "Presion sistma principal" 
 #define  INPUT_2  1
 #define  FACTOR_2 1; //10.000 milibares 10.000 milivoltios
 
-#define  SENSOR_NAME_3 "Intensidad de salida modulo 1" 
-#define  INPUT_3  2
-#define  FACTOR_3 25;
-
-#define  SENSOR_NAME_4 "Presion deposito general" 
-#define  INPUT_4  3
-#define  FACTOR_4 1;
-
 // Factor de correccion = mili_segundos medida / mili_litros pulso
 // es un entero
 // 36.000.000/10.000 = 3600
 
-#define  SENSOR_NAME_5 "caudal (litros/hora)" 
-#define  INPUT_5  102
-#define  FACTOR_5 3600;
+#define  SENSOR_NAME_3 "caudal agua caliente" 
+#define  INPUT_3  102
+#define  FACTOR_3 3600;
+
+
+/*
+#define  SENSOR_NAME_4 "Intensidad de salida modulo 1" 
+#define  INPUT_4  2
+#define  FACTOR_4 25;
+
+#define  SENSOR_NAME_5 "Presion deposito general" 
+#define  INPUT_5  3
+#define  FACTOR_5 1;
+
+*/
+
+
 
 
 // *******************************************************
@@ -108,7 +115,6 @@ void analogicalSensorMessage()
 void matrix_configuration()
     {
 
-
         
         Serial.println (F("matrix_configuration"));
         
@@ -118,9 +124,9 @@ void matrix_configuration()
 
         if (DEVICES_NUMBER > 2) { pinCurrentSensor[2][0]=INPUT_3; pinCurrentSensor[2][1]= FACTOR_3; }
 
-        if (DEVICES_NUMBER > 3) { pinCurrentSensor[3][0]=INPUT_4; pinCurrentSensor[3][1]= FACTOR_4; }
+        // if (DEVICES_NUMBER > 3) { pinCurrentSensor[3][0]=INPUT_4; pinCurrentSensor[3][1]= FACTOR_4; }
 
-        if (DEVICES_NUMBER > 4) { pinCurrentSensor[4][0]=INPUT_5; pinCurrentSensor[4][1]= FACTOR_5; }
+        // if (DEVICES_NUMBER > 4) { pinCurrentSensor[4][0]=INPUT_5; pinCurrentSensor[4][1]= FACTOR_5; }
 
         attachInterrupt(digitalPinToInterrupt(pinCurrentSensor[4][0]-100), edges_period, RISING);
   
@@ -213,8 +219,8 @@ String  printDataCurrentSensor(int pin)
         if      (pin == INPUT_1)   { r= (SENSOR_NAME_1); }
         else if (pin == INPUT_2)   { r= (SENSOR_NAME_2); } 
         else if (pin == INPUT_3)   { r= (SENSOR_NAME_3); } 
-        else if (pin == INPUT_4)   { r= (SENSOR_NAME_4); } 
-        else if (pin == INPUT_5)   { r= (SENSOR_NAME_5); } 
+        // else if (pin == INPUT_4)   { r= (SENSOR_NAME_4); } 
+        // else if (pin == INPUT_5)   { r= (SENSOR_NAME_5); } 
 
               
         else {r=  "Nombre no declarado"; }            
