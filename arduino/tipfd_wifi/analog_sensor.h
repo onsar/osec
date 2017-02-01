@@ -15,11 +15,11 @@
 // es un entero
 // 100000/4000 = 25
 
-#define  SENSOR_NAME_1 "Inten. total" // nombre del sensor
+#define  SENSOR_NAME_1 "P2.Inten.total" // nombre del sensor
 #define  INPUT_1  0 // pin de entrada analógica
 #define  FACTOR_1 25;
 
-#define  SENSOR_NAME_2 "Presion sistema"// principal" 
+#define  SENSOR_NAME_2 "P2.Presion.sist"// principal" 
 #define  INPUT_2  1
 #define  FACTOR_2 1; //10.000 milibares 10.000 milivoltios
 
@@ -27,7 +27,7 @@
 // es un entero
 // 36.000.000/10.000 = 3600
 
-#define  SENSOR_NAME_3 "Agua caliente" 
+#define  SENSOR_NAME_3 "P2.Agua.caliente" 
 #define  INPUT_3  102
 #define  FACTOR_3 3600;
 

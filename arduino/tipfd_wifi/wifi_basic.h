@@ -5,14 +5,14 @@
 
 
 
-// #define SSID "Invitados"
-// #define PASS ""
+#define SSID "Invitados"
+#define PASS ""
 // #define SSID "movil-oscar"
 // #define PASS "Latorre64"
 //#define SSID "casaelobrero"
 //#define PASS "lacosamasbonitadelmundo"
-#define SSID "DELABS"
-#define PASS "dellmacmolaano"
+// #define SSID "DELABS"
+// #define PASS "dellmacmolaano"
 #define IP "193.146.117.35"
 #define PORT "7000"
 
