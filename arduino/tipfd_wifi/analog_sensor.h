@@ -15,11 +15,11 @@
 // es un entero
 // 100000/4000 = 25
 
-#define  SENSOR_NAME_1 "Intensidad total" // nombre del sensor
+#define  SENSOR_NAME_1 "Inten. total" // nombre del sensor
 #define  INPUT_1  0 // pin de entrada analógica
 #define  FACTOR_1 25;
 
-#define  SENSOR_NAME_2 "Presion sistma principal" 
+#define  SENSOR_NAME_2 "Presion sistema"// principal" 
 #define  INPUT_2  1
 #define  FACTOR_2 1; //10.000 milibares 10.000 milivoltios
 
@@ -27,7 +27,7 @@
 // es un entero
 // 36.000.000/10.000 = 3600
 
-#define  SENSOR_NAME_3 "caudal agua caliente" 
+#define  SENSOR_NAME_3 "Agua caliente" 
 #define  INPUT_3  102
 #define  FACTOR_3 3600;
 
@@ -108,8 +108,12 @@ void analogicalSensorMessage(uint8_t output)
                 Serial.print (F("value_An: "));
                 Serial.println (value_An);  
                 
-                if (output==0||output==1) {  lcd.setCursor(0, 0); lcd.print(field_value);
-                                             lcd.setCursor(0, 1); lcd.print(value_An);}
+                if (output==0||output==1) {  lcd.clear();
+                                             lcd.setCursor(0, 0); lcd.print(sensor_name);
+                                             lcd.setCursor(0, 1); lcd.print(value_An);
+                                             delay(500);
+                                             }
+                                             
                 if (output==0||output==2) wifiBasic.enviarPost(sensor_name, value_An);            
                 
             }

@@ -1,5 +1,3 @@
-
-
 #define BPS 9600 //Velocidad de comunicaciones
 
 #include <SoftwareSerial.h>
@@ -27,7 +25,7 @@ void setup(void)
      temperatureSensorsBegin();
      
      lcd.begin(16, 2);
-     lcd.print(F("hello, FaBo!"));
+     lcd.print(F("Hola, ENDEF!"));
   }
 
 
@@ -54,8 +52,8 @@ void loop(void)
       t_last_lcd = current_time;
       Serial.print("millis: ");
       Serial.println(millis() / 1000);
-      // buildTemperatureMessage(1);
-      // analogicalSensorMessage(1);
+      buildTemperatureMessage(1);
+      analogicalSensorMessage(1);
     }
 
 

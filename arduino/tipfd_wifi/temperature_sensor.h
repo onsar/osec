@@ -21,9 +21,9 @@
 #define POSITION_2  {0x28,0xFF,0xE6,0x52,0x80,0x16,0x04,0x94}
 #define NAME_SENSOR_2 "San Pablo Tenmperatura planta 1" 
 #define POSITION_3  {0x28,0xFF,0x84,0xE9,0x74,0x16,0x03,0x93}
-#define NAME_SENSOR_3 "San Pablo-Planta 2" 
+#define NAME_SENSOR_3 "Planta 2" 
 #define POSITION_4  {0x28,0xFF,0x86,0x40,0x70,0x16,0x05,0x69}
-#define NAME_SENSOR_4"San Pablo-Planta 3" 
+#define NAME_SENSOR_4 "Planta 3" 
 #define POSITION_5  {0xEE,0xEE,0xEE,0xEE,0xEE,0xEE,0xEE,0xEE}
 #define NAME_SENSOR_5 " SENSOR POSITION" 
 #define POSITION_6  {0xEE,0xEE,0xEE,0xEE,0xEE,0xEE,0xEE,0xEE}
@@ -103,8 +103,10 @@ void buildTemperatureMessage(uint8_t output) {
              String name_18 = printName(tempDeviceAddress);
              Serial.println(value_18);
              Serial.println(name_18);
-             if (output==0||output==1) {  lcd.setCursor(0, 0); lcd.print(name_18);
-                                          lcd.setCursor(0, 1);lcd.print(value_18);}
+             if (output==0||output==1) {  lcd.clear();
+                                          lcd.setCursor(0, 0); lcd.print(name_18);
+                                          lcd.setCursor(0, 1);lcd.print(value_18);
+                                          delay(1000);}
              if (output==0||output==2) wifiBasic.enviarPost(name_18, value_18);
              
            }
