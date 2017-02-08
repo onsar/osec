@@ -146,7 +146,7 @@ void matrix_configuration()
 float analogValue(int m_i)
     {
         uint32_t sensorValue_a = analogRead(pinCurrentSensor[m_i][0]); 
-        float field_value_a = float(sensorValue_a * pinCurrentSensor[m_i][1]*5)/float(1023);
+        float field_value_a = float(sensorValue_a * pinCurrentSensor[m_i][1]*5.01)/float(1023);
         Serial.print (F("  field_value_a: ")); 
         Serial.println (field_value_a); 
         return field_value_a;

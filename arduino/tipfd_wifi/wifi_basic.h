@@ -4,13 +4,15 @@
 // *******************************************************
 
 
-
-#define SSID "Invitados"
-#define PASS ""
+// #define SSID "Invitados"
+// #define PASS ""
 // #define SSID "movil-oscar"
 // #define PASS "Latorre64"
-//#define SSID "casaelobrero"
-//#define PASS "lacosamasbonitadelmundo"
+// #define SSID "casaelobrero"
+// #define PASS "lacosamasbonitadelmundo"
+#define SSID "ENDEF"
+#define PASS "87654321"
+ 
 // #define SSID "DELABS"
 // #define PASS "dellmacmolaano"
 #define IP "193.146.117.35"

@@ -7,7 +7,8 @@
 // *******************************************************
 
 // Data wire is plugged into port 4 on the Arduino
-#define ONE_WIRE_BUS 6
+// #define ONE_WIRE_BUS 6
+#define ONE_WIRE_BUS 8
 
 // Lower resolution
 #define TEMPERATURE_PRECISION 9
