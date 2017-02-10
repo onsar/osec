@@ -120,7 +120,22 @@ sample code bearing this copyright.
 */
 
 #include "OneWire.h"
-
+/*
+//normal
+#define TA 10
+#define TB 55
+#define TC 65
+#define TD 5
+#define TE 10
+#define TF 53
+*/
+//long
+#define TA 15
+#define TB 50
+#define TC 50
+#define TD 15
+#define TE 15
+#define TF 55
 
 OneWire::OneWire(uint8_t pin)
 {
@@ -182,18 +197,18 @@ void OneWire::write_bit(uint8_t v)
 		noInterrupts();
 		DIRECT_WRITE_LOW(reg, mask);
 		DIRECT_MODE_OUTPUT(reg, mask);	// drive output low
-		delayMicroseconds(10);
+		delayMicroseconds(TA);
 		DIRECT_WRITE_HIGH(reg, mask);	// drive output high
 		interrupts();
-		delayMicroseconds(55);
+		delayMicroseconds(TB);
 	} else {
 		noInterrupts();
 		DIRECT_WRITE_LOW(reg, mask);
 		DIRECT_MODE_OUTPUT(reg, mask);	// drive output low
-		delayMicroseconds(65);
+		delayMicroseconds(TC);
 		DIRECT_WRITE_HIGH(reg, mask);	// drive output high
 		interrupts();
-		delayMicroseconds(5);
+		delayMicroseconds(TD);
 	}
 }
 
@@ -212,10 +227,10 @@ uint8_t OneWire::read_bit(void)
 	DIRECT_WRITE_LOW(reg, mask);
 	delayMicroseconds(3);
 	DIRECT_MODE_INPUT(reg, mask);	// let pin float, pull up will raise
-	delayMicroseconds(10);
+	delayMicroseconds(TE);
 	r = DIRECT_READ(reg, mask);
 	interrupts();
-	delayMicroseconds(53);
+	delayMicroseconds(TF);
 	return r;
 }
 
