@@ -137,7 +137,7 @@ void matrix_configuration()
 
         // if (DEVICES_NUMBER > 4) { pinCurrentSensor[4][0]=INPUT_5; pinCurrentSensor[4][1]= FACTOR_5; }
 
-        attachInterrupt(digitalPinToInterrupt(pinCurrentSensor[2][0]-100), edges_period, RISING);
+        attachInterrupt(digitalPinToInterrupt(pinCurrentSensor[4][0]-100), edges_period, RISING);
   
         matix_declaration = 0 ;
   

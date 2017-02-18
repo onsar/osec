@@ -7,8 +7,8 @@
 // *******************************************************
 
 // Data wire is plugged into port 4 on the Arduino
+// #define ONE_WIRE_BUS 6
 #define ONE_WIRE_BUS 6
-// #define ONE_WIRE_BUS 8
 
 // Lower resolution
 #define TEMPERATURE_PRECISION 9
@@ -80,11 +80,10 @@ uint8_t deviceAddress_12[]=POSITION_12;
 
 String temperatureString = (""); 
 uint8_t numberOfDevices=0;
-
-
+uint8_t  resolution = 9;
 
 void buildTemperatureMessage(uint8_t output) {
-
+    temperatureSensorsBegin();
     numberOfDevices = sensors_m.getDeviceCount();
     Serial.println(F("buildTemperatureMessage() ************"));
     Serial.print(F("numberOfDevices = "));
@@ -97,6 +96,7 @@ void buildTemperatureMessage(uint8_t output) {
         {
            if(sensors_m.getAddress(tempDeviceAddress, i))
            {
+             sensors_m.setResolution(tempDeviceAddress, resolution);
              Serial.print(F("device number= "));
              Serial.println(i);
              float tempC = sensors_m.getTempC(tempDeviceAddress);
