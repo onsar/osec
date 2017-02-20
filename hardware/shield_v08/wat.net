@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/onsar/git_hub/osec/hardware/shield_v08/wat.sch)
-    (date "lun 20 feb 2017 09:51:38 CET")
+    (date "lun 20 feb 2017 12:56:53 CET")
     (tool "Eeschema 4.0.2+dfsg1-stable")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -236,7 +236,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 58AAD2FF))
     (comp (ref P112)
-      (value ARD_AN_I2C_06)
+      (value ARD_AN_I2C)
       (footprint Pin_Headers:Pin_Header_Straight_1x06)
       (libsource (lib conn) (part CONN_01X06))
       (sheetpath (names /) (tstamps /))
@@ -504,10 +504,10 @@
       (uri /home/onsar/git_hub/osec/hardware/oscar_libreria.pretty/RO-1224S.lib))
     (library (logical ESP8266)
       (uri /home/onsar/git_hub/kicad-library/kicad-ESP8266-master/ESP8266.lib))
-    (library (logical mp-1584)
-      (uri /home/onsar/git_hub/osec/hardware/oscar_libreria.pretty/mp-1584.lib))
     (library (logical nano)
-      (uri /home/onsar/git_hub/osec/hardware/oscar_libreria.pretty/nano.lib)))
+      (uri /home/onsar/git_hub/osec/hardware/oscar_libreria.pretty/nano.lib))
+    (library (logical mp-1584)
+      (uri /home/onsar/git_hub/osec/hardware/oscar_libreria.pretty/mp-1584.lib)))
   (nets
     (net (code 1) (name GND)
       (node (ref C102) (pin 2))
