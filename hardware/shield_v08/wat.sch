@@ -812,7 +812,7 @@ Text Notes 3200 5350 0    118  ~ 0
 +-15v
 Text Notes 3600 3150 0    118  ~ 0
 +8v
-Text Notes 2950 4300 0    118  ~ 0
+Text Notes 2850 4350 0    118  ~ 0
 +3,3v
 $Comp
 L CONN_01X03 P108
