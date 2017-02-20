@@ -29,8 +29,11 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:ESP8266
+LIBS:arduino_shieldsNCL
 LIBS:recom-rd
 LIBS:RO-1224S
+LIBS:mp-1584
 LIBS:nano
 LIBS:wat-cache
 EELAYER 25 0
@@ -69,8 +72,8 @@ F 3 "" H 925 825 50  0000 C CNN
 	1    925  825 
 	1    0    0    -1  
 $EndComp
-Text Label 4175 4275 0    60   ~ 0
-ESP_rx
+Text Label 4625 4275 0    60   ~ 0
+e_rx
 $Comp
 L ESP-12 U101
 U 1 1 584C1CED
@@ -102,8 +105,8 @@ Text Label 6725 4075 0    60   ~ 0
 e_g16
 Text Label 6725 4275 0    60   ~ 0
 e_adc
-Text Label 4175 4375 0    60   ~ 0
-ESP_tx
+Text Label 4625 4375 0    60   ~ 0
+e_tx
 $Comp
 L R R2
 U 1 1 58501520
@@ -203,7 +206,7 @@ F 1 "V_IN" V 1025 1825 50  0000 C CNN
 F 2 "Connect:bornier2" H 925 1825 50  0001 C CNN
 F 3 "" H 925 1825 50  0000 C CNN
 	1    925  1825
-	-1   0    0    -1  
+	-1   0    0    1   
 $EndComp
 $Comp
 L CONN_01X02 P102
@@ -225,7 +228,7 @@ F 1 "INTENSIDAD_1" V 10925 2350 50  0000 C CNN
 F 2 "Connect:bornier2" H 10825 2350 50  0001 C CNN
 F 3 "" H 10825 2350 50  0000 C CNN
 	1    10825 2350
-	1    0    0    1   
+	1    0    0    -1  
 $EndComp
 $Comp
 L R R101
@@ -280,7 +283,7 @@ F 1 "INTENSIDAD_2" V 10925 3275 50  0000 C CNN
 F 2 "Connect:bornier2" H 10825 3275 50  0001 C CNN
 F 3 "" H 10825 3275 50  0000 C CNN
 	1    10825 3275
-	1    0    0    1   
+	1    0    0    -1  
 $EndComp
 $Comp
 L R R102
@@ -338,6 +341,17 @@ F 3 "" H 1000 5475 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
+L CONN_01X02 P108
+U 1 1 58735C0C
+P 3000 5325
+F 0 "P108" H 3000 5475 50  0000 C CNN
+F 1 "15VOL" V 3100 5325 50  0000 C CNN
+F 2 "Connect:bornier2" H 3000 5325 50  0001 C CNN
+F 3 "" H 3000 5325 50  0000 C CNN
+	1    3000 5325
+	1    0    0    -1  
+$EndComp
+$Comp
 L GND #PWR011
 U 1 1 58735F97
 P 2700 5525
@@ -351,12 +365,12 @@ $EndComp
 $Comp
 L Recom-rd-RESCUE-wat U102
 U 1 1 5873700F
-P 1875 5375
-F 0 "U102" H 2475 5725 50  0000 C CNN
-F 1 "Recom-rd" H 1875 5625 50  0000 C CNN
-F 2 "oscar_libreria_huellas:Recom-rd" H 1625 5275 50  0001 C CNN
-F 3 "DOCUMENTATION" H 1775 5175 50  0001 C CNN
-	1    1875 5375
+P 1850 5375
+F 0 "U102" H 2450 5725 50  0000 C CNN
+F 1 "Recom-rd" H 1850 5625 50  0000 C CNN
+F 2 "oscar_libreria_huellas:Recom-rd" H 1600 5275 50  0001 C CNN
+F 3 "DOCUMENTATION" H 1750 5175 50  0001 C CNN
+	1    1850 5375
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -401,7 +415,7 @@ F 1 "PRESION_1" V 10925 4225 50  0000 C CNN
 F 2 "Connect:bornier2" H 10825 4225 50  0001 C CNN
 F 3 "" H 10825 4225 50  0000 C CNN
 	1    10825 4225
-	1    0    0    1   
+	1    0    0    -1  
 $EndComp
 $Comp
 L R R103
@@ -478,14 +492,14 @@ F 1 "18b20" V 10900 5850 50  0000 C CNN
 F 2 "Connect:bornier3" H 10800 5850 50  0001 C CNN
 F 3 "" H 10800 5850 50  0000 C CNN
 	1    10800 5850
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L CP1 C106
 U 1 1 58A1C097
 P 1975 4375
 F 0 "C106" H 2000 4475 50  0000 L CNN
-F 1 "100uF" H 2000 4275 50  0000 L CNN
+F 1 "22uF" H 2000 4275 50  0000 L CNN
 F 2 "Capacitors_ThroughHole:C_Radial_D5_L11_P2" H 1975 4375 50  0001 C CNN
 F 3 "" H 1975 4375 50  0000 C CNN
 	1    1975 4375
@@ -573,7 +587,7 @@ L CP1 C107
 U 1 1 58A48BA0
 P 2775 3325
 F 0 "C107" H 2800 3425 50  0000 L CNN
-F 1 "100uF" H 2800 3225 50  0000 L CNN
+F 1 "22uF" H 2800 3225 50  0000 L CNN
 F 2 "Capacitors_ThroughHole:C_Radial_D5_L11_P2" H 2775 3325 50  0001 C CNN
 F 3 "" H 2775 3325 50  0000 C CNN
 	1    2775 3325
@@ -609,266 +623,8 @@ Text Label 825  6325 0    60   ~ 0
 Vin_12V
 Text Label 5950 4975 0    60   ~ 0
 Ves_3V3
-Text Label 2700 4050 0    60   ~ 0
+Text Label 2375 4100 0    60   ~ 0
 Ves_3V3
-Text Label 5800 5850 0    60   ~ 0
-Vpc_5V
-Text Label 5800 6050 0    60   ~ 0
-sda
-Text Label 5800 5950 0    60   ~ 0
-scl
-$Comp
-L GND #PWR019
-U 1 1 58A94056
-P 6300 5750
-F 0 "#PWR019" H 6300 5500 50  0001 C CNN
-F 1 "GND" H 6300 5600 50  0000 C CNN
-F 2 "" H 6300 5750 50  0000 C CNN
-F 3 "" H 6300 5750 50  0000 C CNN
-	1    6300 5750
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_01X04 P111
-U 1 1 58A94F3F
-P 6925 1250
-F 0 "P111" H 6925 1500 50  0000 C CNN
-F 1 "ARD_ALI_04" V 7025 1250 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x04" H 6925 1250 50  0001 C CNN
-F 3 "" H 6925 1250 50  0000 C CNN
-	1    6925 1250
-	-1   0    0    1   
-$EndComp
-Text Label 7125 1100 0    60   ~ 0
-Var_8V
-$Comp
-L GND #PWR020
-U 1 1 58A95A6E
-P 7625 1200
-F 0 "#PWR020" H 7625 950 50  0001 C CNN
-F 1 "GND" H 7625 1050 50  0000 C CNN
-F 2 "" H 7625 1200 50  0000 C CNN
-F 3 "" H 7625 1200 50  0000 C CNN
-	1    7625 1200
-	1    0    0    -1  
-$EndComp
-NoConn ~ 7400 1300
-Text Label 7125 1400 0    60   ~ 0
-Vpc_5V
-$Comp
-L CONN_01X06 P110
-U 1 1 58A96AF9
-P 4600 1750
-F 0 "P110" H 4600 2100 50  0000 C CNN
-F 1 "ARD_DI_06" V 4700 1750 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06" H 4600 1750 50  0001 C CNN
-F 3 "" H 4600 1750 50  0000 C CNN
-	1    4600 1750
-	1    0    0    -1  
-$EndComp
-Text Label 4000 1500 0    60   ~ 0
-Caudal_1
-Text Label 4300 1700 2    60   ~ 0
-ESP_rx
-Text Label 4300 1800 2    60   ~ 0
-ESP_tx
-Text Label 4350 1900 2    60   ~ 0
-ESP_rst
-Text Label 4000 2000 0    60   ~ 0
-18b20
-NoConn ~ 4100 1600
-$Comp
-L CONN_01X04 P112
-U 1 1 58A9834A
-P 6925 2300
-F 0 "P112" H 6925 2550 50  0000 C CNN
-F 1 "ARD_AN_04" V 7025 2300 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x04" H 6925 2300 50  0001 C CNN
-F 3 "" H 6925 2300 50  0000 C CNN
-	1    6925 2300
-	-1   0    0    1   
-$EndComp
-Text Label 7150 2450 0    60   ~ 0
-Intensidad_1
-Text Label 7150 2350 0    60   ~ 0
-Intensidad_2
-Text Label 7150 2250 0    60   ~ 0
-Presión_1
-$Comp
-L CONN_01X02 P113
-U 1 1 58A989F6
-P 6925 1800
-F 0 "P113" H 6850 1625 50  0000 C CNN
-F 1 "ARD_I2C_02" V 7025 1800 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x02" H 6925 1800 50  0001 C CNN
-F 3 "" H 6925 1800 50  0000 C CNN
-	1    6925 1800
-	-1   0    0    1   
-$EndComp
-Text Label 7150 1750 0    60   ~ 0
-scl
-Text Label 7150 1850 0    60   ~ 0
-sda
-$Comp
-L GND #PWR021
-U 1 1 58A9B29F
-P 5950 3175
-F 0 "#PWR021" H 5950 2925 50  0001 C CNN
-F 1 "GND" H 5950 3025 50  0000 C CNN
-F 2 "" H 5950 3175 50  0000 C CNN
-F 3 "" H 5950 3175 50  0000 C CNN
-	1    5950 3175
-	1    0    0    -1  
-$EndComp
-Text Label 9675 1350 0    60   ~ 0
-Caudal_1
-Text Label 9250 2300 0    60   ~ 0
-Intensidad_1
-Text Label 9275 3225 0    60   ~ 0
-Intensidad_2
-Text Label 9275 4175 0    60   ~ 0
-Presión_1
-Text Label 10275 5250 0    60   ~ 0
-Vpc_5V
-Text Label 10275 650  0    60   ~ 0
-Vpc_5V
-Text Label 9925 5850 0    60   ~ 0
-18b20
-$Comp
-L F_Small F101
-U 1 1 58AA0D4D
-P 1350 1775
-F 0 "F101" H 1250 1850 50  0000 L CNN
-F 1 "2A" H 1300 1700 50  0000 L CNN
-F 2 "Fuse_Holders_and_Fuses:BladeFuse-Mini" H 1350 1775 50  0001 C CNN
-F 3 "" H 1350 1775 50  0000 C CNN
-	1    1350 1775
-	1    0    0    -1  
-$EndComp
-Text Label 2350 1750 0    60   ~ 0
-Vin_12V
-NoConn ~ 6475 1100
-NoConn ~ 6475 1200
-NoConn ~ 6475 1300
-NoConn ~ 6475 1400
-NoConn ~ 6475 1500
-NoConn ~ 6475 1700
-NoConn ~ 6475 1600
-NoConn ~ 6475 1800
-NoConn ~ 6475 1900
-NoConn ~ 6475 2000
-NoConn ~ 6475 2100
-NoConn ~ 6475 2200
-NoConn ~ 6475 2300
-NoConn ~ 6475 2400
-NoConn ~ 6475 2500
-NoConn ~ 4975 1100
-NoConn ~ 4975 1200
-NoConn ~ 4975 1300
-NoConn ~ 4975 1400
-NoConn ~ 4975 1500
-NoConn ~ 4975 1600
-NoConn ~ 4975 1700
-NoConn ~ 4975 1800
-NoConn ~ 4975 1900
-NoConn ~ 4975 2000
-NoConn ~ 4975 2100
-NoConn ~ 4975 2200
-NoConn ~ 4975 2300
-NoConn ~ 4975 2400
-NoConn ~ 4975 2500
-Text Label 7525 4375 2    60   ~ 0
-ESP_rst
-NoConn ~ 7425 2150
-Text Label 875  4100 0    60   ~ 0
-Var_8V
-$Comp
-L C_Small C109
-U 1 1 58AAD034
-P 3125 3325
-F 0 "C109" H 2900 3400 50  0000 L CNN
-F 1 "100nF" H 2850 3225 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Disc_D3_P2.5" H 3125 3325 50  0001 C CNN
-F 3 "" H 3125 3325 50  0000 C CNN
-	1    3125 3325
-	-1   0    0    -1  
-$EndComp
-$Comp
-L C_Small C108
-U 1 1 58AAD2FF
-P 2325 4375
-F 0 "C108" H 2100 4450 50  0000 L CNN
-F 1 "100nF" H 2050 4275 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Disc_D3_P2.5" H 2325 4375 50  0001 C CNN
-F 3 "" H 2325 4375 50  0000 C CNN
-	1    2325 4375
-	-1   0    0    -1  
-$EndComp
-Text Label 3350 3000 0    60   ~ 0
-Var_8V
-Text Notes 3100 6350 0    118  ~ 0
-+24v
-Text Notes 3200 5350 0    118  ~ 0
-+-15v
-Text Notes 3600 3150 0    118  ~ 0
-+8v
-Text Notes 2950 4300 0    118  ~ 0
-+3,3v
-$Comp
-L CONN_01X03 P108
-U 1 1 58AA05A2
-P 3000 5375
-F 0 "P108" H 3000 5575 50  0000 C CNN
-F 1 "15VOL" V 3100 5375 50  0000 C CNN
-F 2 "Connect:bornier3" H 3000 5375 50  0001 C CNN
-F 3 "" H 3000 5375 50  0000 C CNN
-	1    3000 5375
-	1    0    0    -1  
-$EndComp
-$Comp
-L TEST TP1
-U 1 1 58AA54D5
-P 2150 1775
-F 0 "TP1" H 2150 2075 50  0000 C BNN
-F 1 "12v" H 2150 2025 50  0000 C CNN
-F 2 "" H 2150 1775 50  0000 C CNN
-F 3 "" H 2150 1775 50  0000 C CNN
-	1    2150 1775
-	1    0    0    -1  
-$EndComp
-$Comp
-L TEST TP2
-U 1 1 58AA55E1
-P 3250 3025
-F 0 "TP2" H 3250 3325 50  0000 C BNN
-F 1 "8v" H 3250 3275 50  0000 C CNN
-F 2 "" H 3250 3025 50  0000 C CNN
-F 3 "" H 3250 3025 50  0000 C CNN
-	1    3250 3025
-	1    0    0    -1  
-$EndComp
-$Comp
-L TEST TP3
-U 1 1 58AA601E
-P 2500 4100
-F 0 "TP3" H 2500 4400 50  0000 C BNN
-F 1 "3v3" H 2500 4350 50  0000 C CNN
-F 2 "" H 2500 4100 50  0000 C CNN
-F 3 "" H 2500 4100 50  0000 C CNN
-	1    2500 4100
-	1    0    0    -1  
-$EndComp
-$Comp
-L TEST TP4
-U 1 1 58AA8241
-P 7850 1400
-F 0 "TP4" H 7850 1700 50  0000 C BNN
-F 1 "5v" H 7850 1650 50  0000 C CNN
-F 2 "" H 7850 1400 50  0000 C CNN
-F 3 "" H 7850 1400 50  0000 C CNN
-	1    7850 1400
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5725 4975 6275 4975
 Wire Wire Line
@@ -944,17 +700,19 @@ Wire Wire Line
 	10525 1750 10275 1750
 Connection ~ 10275 1750
 Wire Wire Line
+	10275 650  10275 900 
+Wire Wire Line
 	1100 5375 1000 5375
 Wire Wire Line
 	1000 5375 1000 5475
 Wire Wire Line
 	825  5275 1100 5275
 Wire Wire Line
-	4150 4275 4825 4275
+	4525 4275 4825 4275
 Wire Wire Line
-	4150 4375 4825 4375
+	4525 4375 4825 4375
 Wire Wire Line
-	6625 4375 7550 4375
+	6625 4375 7125 4375
 Wire Wire Line
 	1125 6225 1075 6225
 Wire Wire Line
@@ -979,11 +737,15 @@ Connection ~ 10375 4575
 Wire Wire Line
 	2625 6225 2725 6225
 Wire Wire Line
-	2600 5375 2800 5375
+	2600 5375 2700 5375
 Wire Wire Line
 	2700 5375 2700 5525
 Wire Wire Line
 	2600 5275 2800 5275
+Wire Wire Line
+	2600 5475 2800 5475
+Wire Wire Line
+	2800 5475 2800 5375
 Wire Wire Line
 	875  4100 1050 4100
 Wire Wire Line
@@ -1034,8 +796,36 @@ Wire Wire Line
 	5775 5950 6075 5950
 Wire Wire Line
 	5775 5850 6075 5850
+Text Label 5800 5850 0    60   ~ 0
+Vpc_5V
+Text Label 5800 6050 0    60   ~ 0
+sda
+Text Label 5800 5950 0    60   ~ 0
+scl
+$Comp
+L GND #PWR019
+U 1 1 58A94056
+P 6300 5750
+F 0 "#PWR019" H 6300 5500 50  0001 C CNN
+F 1 "GND" H 6300 5600 50  0000 C CNN
+F 2 "" H 6300 5750 50  0000 C CNN
+F 3 "" H 6300 5750 50  0000 C CNN
+	1    6300 5750
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
 	5775 5750 6300 5750
+$Comp
+L CONN_01X04 P111
+U 1 1 58A94F3F
+P 6925 1250
+F 0 "P111" H 6925 1500 50  0000 C CNN
+F 1 "ARD_ALI_04" V 7025 1250 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x04" H 6925 1250 50  0001 C CNN
+F 3 "" H 6925 1250 50  0000 C CNN
+	1    6925 1250
+	-1   0    0    1   
+$EndComp
 Wire Wire Line
 	7125 1100 7400 1100
 Wire Wire Line
@@ -1043,33 +833,152 @@ Wire Wire Line
 Wire Wire Line
 	7125 1300 7400 1300
 Wire Wire Line
-	7125 1400 7850 1400
+	7125 1400 7400 1400
+Text Label 7125 1100 0    60   ~ 0
+Var_8V
+$Comp
+L GND #PWR020
+U 1 1 58A95A6E
+P 7625 1200
+F 0 "#PWR020" H 7625 950 50  0001 C CNN
+F 1 "GND" H 7625 1050 50  0000 C CNN
+F 2 "" H 7625 1200 50  0000 C CNN
+F 3 "" H 7625 1200 50  0000 C CNN
+	1    7625 1200
+	1    0    0    -1  
+$EndComp
+NoConn ~ 7400 1300
+Text Label 7125 1400 0    60   ~ 0
+Vpc_5V
+$Comp
+L CONN_01X06 P110
+U 1 1 58A96AF9
+P 4600 1750
+F 0 "P110" H 4600 2100 50  0000 C CNN
+F 1 "ARD_DI_06" V 4700 1750 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06" H 4600 1750 50  0001 C CNN
+F 3 "" H 4600 1750 50  0000 C CNN
+	1    4600 1750
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	3975 1500 4400 1500
+	4400 1500 4100 1500
 Wire Wire Line
 	4100 1600 4400 1600
 Wire Wire Line
-	3975 1700 4400 1700
+	4100 1700 4400 1700
 Wire Wire Line
-	3975 1800 4400 1800
+	4100 1800 4400 1800
 Wire Wire Line
-	3975 1900 4400 1900
+	4100 1900 4400 1900
 Wire Wire Line
-	3975 2000 4400 2000
+	4100 2000 4400 2000
+Text Label 4125 1500 0    60   ~ 0
+c_1
+Text Label 4350 1800 2    60   ~ 0
+e_rx
+Text Label 4350 1900 2    60   ~ 0
+e_tx
+Text Label 4375 2000 2    60   ~ 0
+e_rst
+Text Label 4150 1700 0    60   ~ 0
+18b20
+NoConn ~ 4100 1600
+$Comp
+L CONN_01X04 P112
+U 1 1 58A9834A
+P 6925 2050
+F 0 "P112" H 6925 2300 50  0000 C CNN
+F 1 "ARD_AN_04" V 7025 2050 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x04" H 6925 2050 50  0001 C CNN
+F 3 "" H 6925 2050 50  0000 C CNN
+	1    6925 2050
+	-1   0    0    1   
+$EndComp
 Wire Wire Line
-	7125 2150 7425 2150
+	7125 1900 7425 1900
 Wire Wire Line
-	7125 2250 7425 2250
+	7125 2000 7425 2000
 Wire Wire Line
-	7125 2350 7425 2350
+	7125 2100 7425 2100
 Wire Wire Line
-	7125 2450 7425 2450
+	7125 2200 7425 2200
+Text Label 7150 2200 0    60   ~ 0
+i_1
+Text Label 7150 2100 0    60   ~ 0
+i_2
+Text Label 7150 2000 0    60   ~ 0
+p_1
+$Comp
+L CONN_01X02 P113
+U 1 1 58A989F6
+P 7725 1725
+F 0 "P113" H 7650 1550 50  0000 C CNN
+F 1 "ARD_I2C_02" V 7825 1725 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02" H 7725 1725 50  0001 C CNN
+F 3 "" H 7725 1725 50  0000 C CNN
+	1    7725 1725
+	-1   0    0    1   
+$EndComp
 Wire Wire Line
-	7125 1750 7425 1750
+	7925 1675 8225 1675
 Wire Wire Line
-	7125 1850 7425 1850
+	7925 1775 8225 1775
+Text Label 7950 1675 0    60   ~ 0
+scl
+Text Label 7950 1775 0    60   ~ 0
+sda
+$Comp
+L GND #PWR021
+U 1 1 58A9B29F
+P 5950 3175
+F 0 "#PWR021" H 5950 2925 50  0001 C CNN
+F 1 "GND" H 5950 3025 50  0000 C CNN
+F 2 "" H 5950 3175 50  0000 C CNN
+F 3 "" H 5950 3175 50  0000 C CNN
+	1    5950 3175
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
 	5725 3175 5950 3175
+Text Label 9675 1350 0    60   ~ 0
+c_1
+Text Label 9250 2300 0    60   ~ 0
+i_1
+Text Label 9275 3225 0    60   ~ 0
+i_2
+Text Label 9275 4175 0    60   ~ 0
+p_1
+Text Label 10275 5250 0    60   ~ 0
+Vpc_5V
+Text Label 10275 650  0    60   ~ 0
+Vpc_5V
+Text Label 9925 5850 0    60   ~ 0
+18b20
+$Comp
+L F_Small F101
+U 1 1 58AA0D4D
+P 1350 1775
+F 0 "F101" H 1310 1835 50  0000 L CNN
+F 1 "Fuse" H 1230 1715 50  0000 L CNN
+F 2 "Fuse_Holders_and_Fuses:BladeFuse-Mini" H 1350 1775 50  0001 C CNN
+F 3 "" H 1350 1775 50  0000 C CNN
+	1    1350 1775
+	1    0    0    -1  
+$EndComp
+Text Label 1950 1775 0    60   ~ 0
+Vin_12V
+$Comp
+L D D104
+U 1 1 58AA185E
+P 1600 1925
+F 0 "D104" H 1600 2025 50  0000 C CNN
+F 1 "D" H 1600 1825 50  0000 C CNN
+F 2 "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10" H 1600 1925 50  0001 C CNN
+F 3 "" H 1600 1925 50  0000 C CNN
+	1    1600 1925
+	0    1    1    0   
+$EndComp
 Wire Wire Line
 	1125 1775 1250 1775
 Wire Wire Line
@@ -1084,11 +993,68 @@ Wire Wire Line
 	1900 2125 1900 2075
 Connection ~ 1600 2125
 Connection ~ 1900 1775
+NoConn ~ 6475 1100
+NoConn ~ 6475 1200
+NoConn ~ 6475 1300
+NoConn ~ 6475 1400
+NoConn ~ 6475 1500
+NoConn ~ 6475 1700
+NoConn ~ 6475 1600
+NoConn ~ 6475 1800
+NoConn ~ 6475 1900
+NoConn ~ 6475 2000
+NoConn ~ 6475 2100
+NoConn ~ 6475 2200
+NoConn ~ 6475 2300
+NoConn ~ 6475 2400
+NoConn ~ 6475 2500
+NoConn ~ 4975 1100
+NoConn ~ 4975 1200
+NoConn ~ 4975 1300
+NoConn ~ 4975 1400
+NoConn ~ 4975 1500
+NoConn ~ 4975 1600
+NoConn ~ 4975 1700
+NoConn ~ 4975 1800
+NoConn ~ 4975 1900
+NoConn ~ 4975 2000
+NoConn ~ 4975 2100
+NoConn ~ 4975 2200
+NoConn ~ 4975 2300
+NoConn ~ 4975 2400
+NoConn ~ 4975 2500
 Wire Wire Line
 	2625 6325 2725 6325
 Wire Wire Line
 	2675 6325 2675 6425
 Connection ~ 2675 6325
+Text Label 6950 4375 2    60   ~ 0
+e_rst
+NoConn ~ 7425 1900
+Text Label 875  4100 0    60   ~ 0
+Var_8V
+$Comp
+L C_Small C109
+U 1 1 58AAD034
+P 3125 3325
+F 0 "C109" H 3000 3425 50  0000 L CNN
+F 1 "100nF" H 2850 3225 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Disc_D3_P2.5" H 3125 3325 50  0001 C CNN
+F 3 "" H 3125 3325 50  0000 C CNN
+	1    3125 3325
+	-1   0    0    -1  
+$EndComp
+$Comp
+L C_Small C108
+U 1 1 58AAD2FF
+P 2325 4375
+F 0 "C108" H 2200 4475 50  0000 L CNN
+F 1 "100nF" H 2050 4275 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Disc_D3_P2.5" H 2325 4375 50  0001 C CNN
+F 3 "" H 2325 4375 50  0000 C CNN
+	1    2325 4375
+	-1   0    0    -1  
+$EndComp
 Wire Wire Line
 	2675 3025 3400 3025
 Wire Wire Line
@@ -1102,35 +1068,12 @@ Wire Wire Line
 Wire Wire Line
 	3125 3525 3125 3425
 Connection ~ 2775 3525
+Text Label 3200 3025 0    60   ~ 0
+Var_8V
 Wire Wire Line
 	2325 4100 2325 4275
 Connection ~ 2325 4100
 Wire Wire Line
 	2325 4625 2325 4475
 Connection ~ 1975 4625
-Wire Wire Line
-	2600 5475 2800 5475
-Connection ~ 2700 5375
-$Comp
-L D_Schottky_Small_ALT D2
-U 1 1 58AB1367
-P 10275 800
-F 0 "D2" H 10225 880 50  0000 L CNN
-F 1 "Schotky" H 10125 700 50  0000 L CNN
-F 2 "" V 10275 800 50  0000 C CNN
-F 3 "" V 10275 800 50  0000 C CNN
-	1    10275 800 
-	0    -1   -1   0   
-$EndComp
-$Comp
-L D_ALT D1
-U 1 1 58AB1DF9
-P 1600 1925
-F 0 "D1" H 1600 1825 50  0000 C CNN
-F 1 "1N4007" H 1625 2025 50  0000 C CNN
-F 2 "" H 1600 1925 50  0000 C CNN
-F 3 "" H 1600 1925 50  0000 C CNN
-	1    1600 1925
-	0    1    1    0   
-$EndComp
 $EndSCHEMATC
