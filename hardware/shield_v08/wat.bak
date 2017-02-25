@@ -206,7 +206,7 @@ F 1 "V_IN" V 1025 1825 50  0000 C CNN
 F 2 "Connect:bornier2" H 925 1825 50  0001 C CNN
 F 3 "" H 925 1825 50  0000 C CNN
 	1    925  1825
-	-1   0    0    -1  
+	-1   0    0    1   
 $EndComp
 $Comp
 L CONN_01X02 P102
