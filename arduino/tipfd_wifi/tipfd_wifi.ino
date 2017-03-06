@@ -1,7 +1,8 @@
+
 #define BPS 9600 //Velocidad de comunicaciones
 
 #include <SoftwareSerial.h>
-#define RXPIN 4
+#define RXPIN 6
 #define TXPIN 5
 SoftwareSerial wifiSerialInit (RXPIN,TXPIN);
 

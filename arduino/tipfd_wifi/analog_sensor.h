@@ -8,28 +8,34 @@
 // *******************************************************
 
 
-#define DEVICES_NUMBER 3
+#define DEVICES_NUMBER 4
 
 
 // Factor de correccion = miliamperios maximos / milivoltios salida sensor 
 // es un entero
 // 100000/4000 = 25
 
-#define  SENSOR_NAME_1 "P2.Inten.total" // nombre del sensor
+#define  SENSOR_NAME_1 "P2_Inten._mod_1" // nombre del sensor
 #define  INPUT_1  0 // pin de entrada analógica
 #define  FACTOR_1 25;
 
-#define  SENSOR_NAME_2 "P2.Presion.sist"// principal" 
-#define  INPUT_2  1
-#define  FACTOR_2 1; //10.000 milibares 10.000 milivoltios
+#define  SENSOR_NAME_2 "P2_Inten_mod_2" // nombre del sensor
+#define  INPUT_2  1 // pin de entrada analógica
+#define  FACTOR_2 25;
+
+
+#define  SENSOR_NAME_3 "P2.Presion.sist"// principal" 
+#define  INPUT_3  2
+#define  FACTOR_3 1; //10.000 milibares 10.000 milivoltios
+
 
 // Factor de correccion = mili_segundos medida / mili_litros pulso
 // es un entero
 // 36.000.000/10.000 = 3600
 
-#define  SENSOR_NAME_3 "P2.Agua.caliente" 
-#define  INPUT_3  102
-#define  FACTOR_3 3600;
+#define  SENSOR_NAME_4 "P2.Agua.caliente" 
+#define  INPUT_4  102
+#define  FACTOR_4 3600;
 
 
 /*
@@ -133,7 +139,7 @@ void matrix_configuration()
 
         if (DEVICES_NUMBER > 2) { pinCurrentSensor[2][0]=INPUT_3; pinCurrentSensor[2][1]= FACTOR_3; }
 
-        // if (DEVICES_NUMBER > 3) { pinCurrentSensor[3][0]=INPUT_4; pinCurrentSensor[3][1]= FACTOR_4; }
+        if (DEVICES_NUMBER > 3) { pinCurrentSensor[3][0]=INPUT_4; pinCurrentSensor[3][1]= FACTOR_4; }
 
         // if (DEVICES_NUMBER > 4) { pinCurrentSensor[4][0]=INPUT_5; pinCurrentSensor[4][1]= FACTOR_5; }
 
@@ -225,7 +231,7 @@ String  printDataCurrentSensor(int pin)
         if      (pin == INPUT_1)   { r= (SENSOR_NAME_1); }
         else if (pin == INPUT_2)   { r= (SENSOR_NAME_2); } 
         else if (pin == INPUT_3)   { r= (SENSOR_NAME_3); } 
-        // else if (pin == INPUT_4)   { r= (SENSOR_NAME_4); } 
+        else if (pin == INPUT_4)   { r= (SENSOR_NAME_4); } 
         // else if (pin == INPUT_5)   { r= (SENSOR_NAME_5); } 
 
               
