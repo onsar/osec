@@ -1,0 +1,304 @@
+@font-face {
+	font-family: DINROUNDWEBW01_BLACK;
+	src: url('../fonts/DINROUNDWEBW01-BLACK.TTF');
+}
+@font-face {
+	font-family: DINROUNDWEBW01_BOLD;
+	src: url('../fonts/DINROUNDWEBW01-BOLD.TTF');
+}
+
+@font-face {
+	font-family: DINROUNDWEBW01_MEDIUM;
+	src: url('../fonts/DINROUNDWEBW01-MEDIUM.TTF');
+}
+
+@font-face {
+	font-family: DINROUNDWEBW01_REGULAR;
+	src: url('../fonts/DINROUNDWEBW01-REGULAR.TTF');
+}
+
+
+
+
+body{
+	width: 1920px;
+	height: 1080px;
+	background: url('../img/back.png') no-repeat;
+}
+
+#titulo1{
+	position: fixed;
+	top: 150px;
+	left:125px;
+	font-family: DINROUNDWEBW01_REGULAR;
+	color: #fff;
+	font-size: 30;
+}
+#titulo2{
+	position: fixed;
+	top: 170px;
+	left:125px;
+	font-family: DINROUNDWEBW01_REGULAR;
+	color: #fff;
+	font-size: 110;
+}
+#titulo3{
+	position: fixed;
+	top: 280px;
+	left:125px;
+	font-family: DINROUNDWEBW01_REGULAR;
+	color: #fff;
+	font-size: 100;
+}
+#cabecera1{
+	position: fixed;
+	top: 420px;
+	left:485px;
+	font-family: DINROUNDWEBW01_BOLD;
+	color: #055e77;
+	font-size: 27px;
+	text-align: center;
+}
+#cabecera2{
+	position: fixed;
+	top: 420px;
+	left:790px;
+	font-family: DINROUNDWEBW01_BOLD;
+	color: #055e77;
+	font-size: 27px;
+	text-align: center;
+}
+#eizquierda1{
+	position: fixed;
+	top: 530px;
+	left:145px;
+	font-family: DINROUNDWEBW01_REGULAR;
+	color: #055e77;
+	font-size: 25px;
+	text-align: center;
+}
+
+#izquierda1{
+	position: fixed;
+	top: 555px;
+	left:145px;
+	font-family: DINROUNDWEBW01_BOLD;
+	color: #055e77;
+	font-size: 40px;
+	text-align: center;
+}
+#eizquierda2{
+	position: fixed;
+	top: 620px;
+	left:145px;
+	font-family: DINROUNDWEBW01_REGULAR;
+	color: #055e77;
+	font-size: 25px;
+	text-align: center;
+}
+
+#izquierda2{
+	position: fixed;
+	top: 645px;
+	left:145px;
+	font-family: DINROUNDWEBW01_BOLD;
+	color: #055e77;
+	font-size: 40px;
+	text-align: center;
+}
+
+
+#eizquierda3{
+	position: fixed;
+	top: 735px;
+	left:145px;
+	font-family: DINROUNDWEBW01_REGULAR;
+	color: #055e77;
+	font-size: 25px;
+	text-align: center;
+}
+
+#izquierda3{
+	position: fixed;
+	top: 760px;
+	left:145px;
+	font-family: DINROUNDWEBW01_BOLD;
+	color: #055e77;
+	font-size: 40px;
+	text-align: center;
+}
+#eizquierda4{
+	position: fixed;
+	top: 825px;
+	left:145px;
+	font-family: DINROUNDWEBW01_REGULAR;
+	color: #055e77;
+	font-size: 25px;
+	text-align: center;
+}
+
+#izquierda4{
+	position: fixed;
+	top: 850px;
+	left:145px;
+	font-family: DINROUNDWEBW01_BOLD;
+	color: #055e77;
+	font-size: 40px;
+	text-align: center;
+}
+
+#hoy1{
+	position: fixed;
+	top: 760px;
+	left:330px;
+	font-family: DINROUNDWEBW01_BOLD;
+	color: #ed1e79;
+	font-size: 40px;
+	text-align: center;
+}
+
+#hoy2{
+	position: fixed;
+	top: 850px;
+	left:370px;
+	font-family: DINROUNDWEBW01_BOLD;
+	color: #ed1e79;
+	font-size: 40px;
+	text-align: center;
+}
+
+#pet{
+	position: fixed;
+	top: 550px;
+	left:485px;
+	font-family: DINROUNDWEBW01_BOLD;
+	color: #055e77;
+	font-size: 30px;
+	text-align: center;
+	width: 250px;
+}
+
+#pee{
+	position: fixed;
+	top: 640px;
+	left:485px;
+	font-family: DINROUNDWEBW01_BOLD;
+	color: #055e77;
+	font-size: 30px;
+	text-align: center;
+	width: 250px;
+}
+#peth{
+	position: fixed;
+	top: 760px;
+	left:485px;
+	font-family: DINROUNDWEBW01_BOLD;
+	color: #055e77;
+	font-size: 30px;
+	text-align: center;
+	width: 250px;
+}
+
+#peeh{
+	position: fixed;
+	top: 855px;
+	left:485px;
+	font-family: DINROUNDWEBW01_BOLD;
+	color: #055e77;
+	font-size: 30px;
+	text-align: center;
+	width: 250px;
+}
+
+#eet{
+	position: fixed;
+	top: 545px;
+	left:755px;
+	font-family: DINROUNDWEBW01_BOLD;
+	color: #fff;
+	font-size: 35px;
+	text-align: center;
+	width: 250px;
+}
+
+#eee{
+	position: fixed;
+	top: 640px;
+	left:755px;
+	font-family: DINROUNDWEBW01_BOLD;
+	color: #fff;
+	font-size: 35px;
+	text-align: center;
+	width: 250px;
+}
+#eeth{
+	position: fixed;
+	top: 755px;
+	left:755px;
+	font-family: DINROUNDWEBW01_BOLD;
+	color: #fff;
+	font-size: 35px;
+	text-align: center;
+	width: 250px;
+}
+
+#eeeh{
+	position: fixed;
+	top: 852px;
+	left:755px;
+	font-family: DINROUNDWEBW01_BOLD;
+	color: #fff;
+	font-size: 35px;
+	text-align: center;
+	width: 250px;
+}
+
+#yahemos{
+	position: fixed;
+	top: 700px;
+	left:1390px;
+	font-family: DINROUNDWEBW01_BOLD;
+	color: #fff;
+	font-size: 30px;
+	text-align: center;
+	width: 500px;
+}
+#cantidad{
+	position: fixed;
+	top: 770px;
+	left:1390px;
+	font-family: DINROUNDWEBW01_BOLD;
+	color: #fff;
+	font-size: 100px;
+	text-align: center;
+	width: 500px;
+}
+#arboles{
+	position: fixed;
+	top: 910px;
+	left:1390px;
+	font-family: DINROUNDWEBW01_BOLD;
+	color: #fff;
+	font-size: 50px;
+	text-align: center;
+	width: 500px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
