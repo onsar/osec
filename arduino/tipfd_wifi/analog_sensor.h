@@ -15,42 +15,36 @@
 // es un entero
 // 100000/4000 = 25
 
-#define  SENSOR_NAME_1 "P2_Inten._mod_1" // nombre del sensor
+#define  SENSOR_NAME_1 "Po_Inten._mod_1" // nombre del sensor
 #define  INPUT_1  0 // pin de entrada analógica
 #define  FACTOR_1 25;
 
-#define  SENSOR_NAME_2 "P2_Inten_mod_2" // nombre del sensor
+#define  SENSOR_NAME_2 "Po_Inten_mod_2" // nombre del sensor
 #define  INPUT_2  1 // pin de entrada analógica
 #define  FACTOR_2 25;
 
 
-#define  SENSOR_NAME_3 "P2.Presion.sist"// principal" 
+#define  SENSOR_NAME_3 "Po.Presion.sist"// principal" 
 #define  INPUT_3  2
 #define  FACTOR_3 1; //10.000 milibares 10.000 milivoltios
 
 
+// El pin de entrada INPUT_X se define como el numero de entrada + 100
 // Factor de correccion = mili_segundos medida / mili_litros pulso
 // es un entero
 // 36.000.000/10.000 = 3600
 
-#define  SENSOR_NAME_4 "P2.Agua.caliente" 
+#define  SENSOR_NAME_4 "Po.Caudal_Agua_1" 
 #define  INPUT_4  102
 #define  FACTOR_4 3600;
 
-
 /*
-#define  SENSOR_NAME_4 "Intensidad de salida modulo 1" 
-#define  INPUT_4  2
-#define  FACTOR_4 25;
 
 #define  SENSOR_NAME_5 "Presion deposito general" 
 #define  INPUT_5  3
 #define  FACTOR_5 1;
 
 */
-
-
-
 
 // *******************************************************
 
@@ -74,9 +68,7 @@ void edges_period();
 
 void analogicalSensorMessage(uint8_t output)
     {
-        Serial.println(F("Sensores de de medida analogica"));
-        // borrar, solo para pruebas
-        // edges_period();
+        Serial.println(F("********analogicalSensorMessage()"));
 
         if(matix_declaration) matrix_configuration();
         
@@ -86,7 +78,7 @@ void analogicalSensorMessage(uint8_t output)
                 // uint32_t sensorValue;  
                 float field_value;    // valor de la medida         
                 
-                Serial.print(F("numero device: "));
+                Serial.print(F("****numero device: "));
                 Serial.print(i);
 
                 int pin = pinCurrentSensor[i][0];
@@ -104,26 +96,31 @@ void analogicalSensorMessage(uint8_t output)
                 if(pinCurrentSensor[i][0] > 99 && pinCurrentSensor[i][0] < 200 ) field_value = interruptionRead(i); 
                 
                 String value_An = String(field_value,2);
-
-                Serial.print (F("output: ")); 
-                Serial.println (output); 
                 
-                Serial.print (F("field_value: ")); 
-                Serial.println (field_value); 
+                // Serial.print (F("field_value: ")); 
+                // Serial.println (field_value); 
 
-                Serial.print (F("value_An: "));
+                Serial.print (F("  value_An: "));
                 Serial.println (value_An);  
                 
-                if (output==0||output==1) {  lcd.clear();
-                                             lcd.setCursor(0, 0); lcd.print(sensor_name);
-                                             lcd.setCursor(0, 1); lcd.print(value_An);
-                                             delay(500);
-                                             }
-                                             
-                if (output==0||output==2) wifiBasic.enviarPost(sensor_name, value_An);            
+                if (output==0) 
+                    {  
+                        lcd.clear();
+                        lcd.setCursor(0, 0); lcd.print(sensor_name);
+                        lcd.setCursor(0, 1); lcd.print(value_An);
+                        wifiBasic.enviarPost(sensor_name, value_An);
+                     }
+                if (output==1) 
+                    {  
+                        lcd.clear();
+                        lcd.setCursor(0, 0); lcd.print(sensor_name);
+                        lcd.setCursor(0, 1); lcd.print(value_An);
+                        delay(4000);
+                     }
+        
+                if (output==2) wifiBasic.enviarPost(sensor_name, value_An);            
                 
             }
-
     
     }
 
@@ -131,7 +128,7 @@ void matrix_configuration()
     {
 
         
-        Serial.println (F("matrix_configuration"));
+        Serial.println (F("****matrix_configuration"));
         
         if (DEVICES_NUMBER > 0) { pinCurrentSensor[0][0]=INPUT_1; pinCurrentSensor[0][1]= FACTOR_1; }
         
@@ -143,7 +140,7 @@ void matrix_configuration()
 
         // if (DEVICES_NUMBER > 4) { pinCurrentSensor[4][0]=INPUT_5; pinCurrentSensor[4][1]= FACTOR_5; }
 
-        attachInterrupt(digitalPinToInterrupt(pinCurrentSensor[2][0]-100), edges_period, RISING);
+        attachInterrupt(digitalPinToInterrupt(pinCurrentSensor[3][0]-100), edges_period, RISING);
   
         matix_declaration = 0 ;
   
@@ -152,9 +149,9 @@ void matrix_configuration()
 float analogValue(int m_i)
     {
         uint32_t sensorValue_a = analogRead(pinCurrentSensor[m_i][0]); 
-        float field_value_a = float(sensorValue_a * pinCurrentSensor[m_i][1]*5.01)/float(1023);
-        Serial.print (F("  field_value_a: ")); 
-        Serial.println (field_value_a); 
+        float field_value_a = float(sensorValue_a * pinCurrentSensor[m_i][1]*5.02)/float(1023);
+        // Serial.print (F("  field_value_a: ")); 
+        // Serial.println (field_value_a); 
         return field_value_a;
     }
 
@@ -165,10 +162,10 @@ float interruptionRead(int m_i)
         // 30 min sin pulsos -> menos de 0,33 litros/min indicamos 0l/hora ()
         
         
-        float field_value_i =33.33;
+        float field_value_i = 0.01;
 
         Serial.println(F(""));
-        Serial.println(F("interruptionRead **************"));
+        Serial.println(F("**interruptionRead()"));
         
         Serial.print(F("time_last: "));
         Serial.println(time_last);
@@ -217,8 +214,8 @@ void edges_period() //This is the function that the interupt calls
               time_last=time_interruption; 
           }
 
-        Serial.print(F("edges_period - time_last; "));  
-        Serial.println(time_last);       
+        Serial.print(F("********edges_period - time_last: "));  
+        Serial.println(time_dif);       
     } 
     
    
