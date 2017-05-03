@@ -182,23 +182,44 @@ double EnergyMonitor::calcIrms(unsigned int Number_of_Samples)
   #else
     int SupplyVoltage = readVcc();
   #endif
-
-
+  // uint32_t init_time= millis();
+    
   for (unsigned int n = 0; n < Number_of_Samples; n++)
   {
+
+    // uint32_t end_time= millis();
     sampleI = analogRead(inPinI);
+    // Serial.print("sampleI = ");
+    // Serial.println(sampleI);
 
     // Digital low pass filter extracts the 2.5 V or 1.65 V dc offset,
     //  then subtract this - signal is now centered on 0 counts.
     offsetI = (offsetI + (sampleI-offsetI)/1024);
+    
+    // Serial.print("offsetI = ");
+    // Serial.println(offsetI);
+    
     filteredI = sampleI - offsetI;
 
     // Root-mean-square method current
     // 1) square current values
+    
     sqI = filteredI * filteredI;
+    
+    
     // 2) sum
-    sumI += sqI;
+    if (sqI > 1.0) sumI += sqI;
+    // sumI += sqI;
+    // Serial.print("* sqI = ");
+    // Serial.println(sqI);
+    // Serial.print("********* sumI = ");
+    // Serial.println(sumI);
+    // Serial.print("SupplyVoltage = ");
+    // Serial.println(SupplyVoltage);
   }
+  // uint32_t end_time= millis();
+  // Serial.println(init_time);
+  // Serial.println(end_time);
 
   double I_RATIO = ICAL *((SupplyVoltage/1000.0) / (ADC_COUNTS));
   Irms = I_RATIO * sqrt(sumI / Number_of_Samples);
