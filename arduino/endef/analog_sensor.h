@@ -1,4 +1,5 @@
 
+
 #ifndef current_sensor_configuration_h
 #define current_sensor_configuration_h
 
@@ -13,18 +14,18 @@
 
 // Factor de correccion = miliamperios maximos / milivoltios salida sensor 
 // es un entero
-// 100000/4000 = 25
+// 50000/4000 = 12.5
 
-#define  SENSOR_NAME_1 "Po_Inten._mod_1" // nombre del sensor
+#define  SENSOR_NAME_1 "Inten_1" // nombre del sensor
 #define  INPUT_1  0 // pin de entrada analógica
-#define  FACTOR_1 25;
+#define  FACTOR_1 12.5;
 
-#define  SENSOR_NAME_2 "Po_Inten_mod_2" // nombre del sensor
+#define  SENSOR_NAME_2 "Inten_2" // nombre del sensor
 #define  INPUT_2  1 // pin de entrada analógica
-#define  FACTOR_2 25;
+#define  FACTOR_2 12.5;
 
 
-#define  SENSOR_NAME_3 "Po.Presion.sist"// principal" 
+#define  SENSOR_NAME_3 "Presion"// principal" 
 #define  INPUT_3  2
 #define  FACTOR_3 1; //10.000 milibares 10.000 milivoltios
 
@@ -34,7 +35,7 @@
 // es un entero
 // 36.000.000/10.000 = 3600
 
-#define  SENSOR_NAME_4 "Po.Caudal_Agua_1" 
+#define  SENSOR_NAME_4 "Caudal" 
 #define  INPUT_4  102
 #define  FACTOR_4 3600;
 
