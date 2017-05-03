@@ -11,7 +11,6 @@
 // #define PASS "Latorre64"
 // #define SSID "casaelobrero"
 // #define PASS "lacosamasbonitadelmundo"
-
 #define SSID "ENDEF"
 #define PASS "87654321"
 // #define SSID "DELABS"

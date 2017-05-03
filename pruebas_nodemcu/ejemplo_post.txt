@@ -1,0 +1,13 @@
+String cuerpo = "site=" + agent + " &name=" + name + "&value=" + value;
+String lonPost = String(cuerpo.length());
+String post = ("POST / HTTP/1.1\r\nContent-Length:") + lonPost + "\r\n\r\n"+ cuerpo;
+
+
+"POST / HTTP/1.1\r\nContent-Length:45\r\n\r\nsite=prueba &name=28ffb432841605d2&value=23.9"
+
+
+
+POST / HTTP/1.1
+Content-Length:45
+
+site=prueba &name=28ffb432841605d2&value=23.9

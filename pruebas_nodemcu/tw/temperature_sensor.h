@@ -7,19 +7,19 @@
 // *******************************************************
 
 // #define ONE_WIRE_BUS 6 // arduino uno
-#define ONE_WIRE_BUS 4 // arduino nano
+#define ONE_WIRE_BUS D1 // arduino nano
 
 // Lower resolution
 #define TEMPERATURE_PRECISION 9
 
 // #define POSITION_1  {0x28,0xFF,0x04,0x00,0x70,0x16,0x05,0xC1}
-#define POSITION_1  {0x28,0x53,0x8e,0x01,0x08,0x00,0x00,0xaa}
+#define POSITION_1  {0x28,0xFF,0xFD,0x36,0x84,0x16,0x04,0x98}
 // #define POSITION_1  {0xEE,0xEE,0xEE,0xEE,0xEE,0xEE,0xEE,0xEE}
-#define NAME_SENSOR_1 "P2.Temp.entrada" 
-#define POSITION_2  {0x28,0xFF,0xE6,0x52,0x80,0x16,0x04,0x94}
-#define NAME_SENSOR_2 "San Pablo Tenmperatura planta 1" 
-#define POSITION_3  {0x28,0xFF,0x84,0xE9,0x74,0x16,0x03,0x93}
-#define NAME_SENSOR_3 "Tra Planta 2" 
+#define NAME_SENSOR_1 "Temp_Out" 
+#define POSITION_2  {0x28,0xFF,0xBB,0x32,0x84,0x16,0x05,0xBD}
+#define NAME_SENSOR_2 "Temp_In" 
+#define POSITION_3  {0x28,0xFF,0x37,0x95,0x83,0x16,0x03,0xDF}
+#define NAME_SENSOR_3 "Temp_Amb" 
 #define POSITION_4  {0x28,0xFF,0x86,0x40,0x70,0x16,0x05,0x69}
 #define NAME_SENSOR_4 "Tra Planta 3" 
 #define POSITION_5  {0xEE,0xEE,0xEE,0xEE,0xEE,0xEE,0xEE,0xEE}
@@ -77,7 +77,6 @@ String temperatureString = ("");
 uint8_t numberOfDevices=0;
 
 
-
 void buildTemperatureMessage(uint8_t output) {
   
     Serial.println(F("********buildTemperatureMessage()"));
@@ -98,7 +97,7 @@ void buildTemperatureMessage(uint8_t output) {
              String value_18 = String(tempC,1);
              String name_18 = printName(tempDeviceAddress);
              Serial.println(name_18 + ": " + value_18);             
-
+/*
              if (output==0) 
                  {
                       lcd.clear();
@@ -119,7 +118,8 @@ void buildTemperatureMessage(uint8_t output) {
 
              if (output==2) wifiBasic.enviarPost(name_18, value_18);
              
-
+*/
+            if (output==2) enviarPost(name_18, value_18);
              
            }
         }
@@ -151,7 +151,6 @@ String printName(DeviceAddress deviceAddress)
  
 }
 
-  
 
 bool compareAddress(DeviceAddress deviceAddress_c_1, DeviceAddress deviceAddress_c_2)
   {

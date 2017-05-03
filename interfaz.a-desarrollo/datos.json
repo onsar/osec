@@ -1,0 +1,19 @@
+{
+	"termica_energia_total_valor":25000000,
+	"termica_energia_total_unidades":"KWh",
+	"termica_co2_total_valor":12000,
+	"termica_co2_total_unidades":"Tn",
+	"electrica_energia_total_valor":5000000,
+	"electrica_energia_total_unidades":"KWh",
+	"electrica_co2_total_valor":20000,
+	"electrica_co2_total_unidades":"Tn",
+	"arboles_total_valor":21013,
+	"termica_energia_hoy_valor":25000,
+	"termica_energia_hoy_unidades":"KWh",
+	"termica_co2_hoy_valor":2.5,
+	"termica_co2_hoy_unidades":"Kg",
+	"electrica_energia_hoy_valor":5000,
+	"electrica_energia_hoy_unidades":"KWh",
+	"electrica_co2_hoy_valor":1.5,
+	"electrica_co2_hoy_unidades":"Kg"
+}

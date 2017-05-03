@@ -123,6 +123,8 @@ sample code bearing this copyright.
 
 //normal
 
+/*
+
 #define TA 10
 #define TB 55
 #define TC 65
@@ -130,16 +132,19 @@ sample code bearing this copyright.
 #define TE 10
 #define TF 53
 
+*/
 
-/*
+
 //long
+
 #define TA 15
 #define TB 50
 #define TC 50
 #define TD 15
 #define TE 15
 #define TF 55
-*/
+
+
 
 OneWire::OneWire(uint8_t pin)
 {
