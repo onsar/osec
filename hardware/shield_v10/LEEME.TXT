@@ -1,0 +1,1 @@
+Esta versión incorpora la alimentación directa de la entrada al RD-xx15 
