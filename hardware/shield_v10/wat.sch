@@ -606,9 +606,9 @@ F 3 "" H 4600 1750 50  0000 C CNN
 	1    4600 1750
 	1    0    0    -1  
 $EndComp
-Text Label 4325 1900 2    60   ~ 0
+Text Label 4350 1800 2    60   ~ 0
 e_rx
-Text Label 4325 1800 2    60   ~ 0
+Text Label 4350 1900 2    60   ~ 0
 e_tx
 Text Label 4375 2000 2    60   ~ 0
 e_rst
@@ -878,10 +878,6 @@ Wire Wire Line
 Wire Wire Line
 	2700 5375 2700 5525
 Wire Wire Line
-	2600 5275 2800 5275
-Wire Wire Line
-	2600 5475 2800 5475
-Wire Wire Line
 	875  4100 1050 4100
 Wire Wire Line
 	1450 4400 1450 4650
@@ -1069,10 +1065,6 @@ Wire Wire Line
 Connection ~ 1125 2250
 Wire Wire Line
 	10400 3100 10525 3100
-Text Label 2800 5275 0    60   ~ 0
-+15_voltios
-Text Label 2800 5475 0    60   ~ 0
--15_voltios
 Wire Wire Line
 	10525 2900 10225 2900
 Wire Wire Line
@@ -1103,10 +1095,6 @@ Wire Wire Line
 	10450 4150 10450 3925
 Wire Wire Line
 	10450 3925 9750 3925
-Text Label 9750 3925 0    60   ~ 0
-+15_voltios
-Text Label 9750 4075 0    60   ~ 0
--15_voltios
 Text Label 2800 6225 0    60   ~ 0
 +24_voltios
 $Comp
@@ -1174,4 +1162,16 @@ F 3 "" H 10725 4400 50  0000 C CNN
 	1    10725 4400
 	1    0    0    1   
 $EndComp
+Wire Wire Line
+	2600 5275 3000 5275
+Wire Wire Line
+	2600 5475 3000 5475
+Text Label 2775 5275 0    60   ~ 0
++15_voltios
+Text Label 2775 5475 0    60   ~ 0
+-15_voltios
+Text Label 9750 3925 0    60   ~ 0
++15_voltios
+Text Label 9750 4075 0    60   ~ 0
+-15_voltios
 $EndSCHEMATC
