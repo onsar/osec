@@ -208,7 +208,8 @@ double EnergyMonitor::calcIrms(unsigned int Number_of_Samples)
     
     
     // 2) sum
-    if (sqI > 1.0) sumI += sqI;
+    // if (sqI > 1.0) sumI += sqI;
+    sumI += sqI;
     // sumI += sqI;
     // Serial.print("* sqI = ");
     // Serial.println(sqI);
