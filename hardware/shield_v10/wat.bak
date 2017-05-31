@@ -1162,8 +1162,6 @@ F 3 "" H 10725 4400 50  0000 C CNN
 	1    10725 4400
 	1    0    0    1   
 $EndComp
-NoConn ~ 9750 3925
-NoConn ~ 9750 4075
 Wire Wire Line
 	2600 5275 3000 5275
 Wire Wire Line
@@ -1171,5 +1169,9 @@ Wire Wire Line
 Text Label 2775 5275 0    60   ~ 0
 +15_voltios
 Text Label 2775 5475 0    60   ~ 0
+-15_voltios
+Text Label 9750 3925 0    60   ~ 0
++15_voltios
+Text Label 9750 4075 0    60   ~ 0
 -15_voltios
 $EndSCHEMATC

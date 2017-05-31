@@ -80,7 +80,7 @@ U 1 1 584C1CED
 P 5725 4075
 F 0 "U101" H 5725 3975 50  0000 C CNN
 F 1 "ESP-12" H 5725 4175 50  0000 C CNN
-F 2 "ESP8266:ESP-07v2" H 5725 4075 50  0001 C CNN
+F 2 "oscar_libreria_huellas:ESP-07v2_pad" H 5725 4075 50  0001 C CNN
 F 3 "" H 5725 4075 50  0001 C CNN
 	1    5725 4075
 	-1   0    0    1   
@@ -225,7 +225,7 @@ U 1 1 58733FD1
 P 9800 3000
 F 0 "R101" V 9880 3000 50  0000 C CNN
 F 1 "1K" V 9800 3000 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM15mm" V 9730 3000 50  0001 C CNN
+F 2 "oscar_libreria_huellas:Resistor_RM15mm_pad" V 9730 3000 50  0001 C CNN
 F 3 "" H 9800 3000 50  0000 C CNN
 	1    9800 3000
 	0    -1   1    0   
@@ -269,7 +269,7 @@ U 1 1 58734EE4
 P 9850 4350
 F 0 "R102" V 9930 4350 50  0000 C CNN
 F 1 "1K" V 9850 4350 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM15mm" V 9780 4350 50  0001 C CNN
+F 2 "oscar_libreria_huellas:Resistor_RM15mm_pad" V 9780 4350 50  0001 C CNN
 F 3 "" H 9850 4350 50  0000 C CNN
 	1    9850 4350
 	0    -1   1    0   
@@ -368,7 +368,7 @@ U 1 1 58A0439C
 P 9850 5625
 F 0 "R103" V 9930 5625 50  0000 C CNN
 F 1 "1K" V 9850 5625 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM15mm" V 9780 5625 50  0001 C CNN
+F 2 "oscar_libreria_huellas:Resistor_RM15mm_pad" V 9780 5625 50  0001 C CNN
 F 3 "" H 9850 5625 50  0000 C CNN
 	1    9850 5625
 	0    -1   1    0   
