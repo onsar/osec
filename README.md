@@ -7,3 +7,5 @@ En la primera fase monitorizamos una instalación solar fotovoltaica mixta que e
 * Temperatura del agua
 * Caudal
 * Presión del circuito hidráulico
+
+En una segunda fases optimizaremos el circuito
