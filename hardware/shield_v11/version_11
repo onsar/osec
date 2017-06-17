@@ -1,0 +1,13 @@
+Modificaciones circuito V11
+* Eliminar los 5V de arduino
+* Incluir fusible con rearmado
+* Darle estabilidad a los 5 Voltios
+* Borrar mp-1584 (12v -> 8V)
+* Borrar RD-1215
+* Borrar RO-1224
+* Comprobar LM1117 a 5V (8v -> 3,3V)
+* Modificar el circuito de intensidad 1
+** ¿A que distancia podemos llevar el cable de la pinza?
+* Modificar el circuito de intensidad 2
+* Modificar el circuito de presión
+
