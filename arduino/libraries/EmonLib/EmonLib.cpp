@@ -183,6 +183,7 @@ double EnergyMonitor::calcIrms(unsigned int Number_of_Samples)
     int SupplyVoltage = readVcc();
   #endif
   // uint32_t init_time= millis();
+  int enable_sumI = 0;
     
   for (unsigned int n = 0; n < Number_of_Samples; n++)
   {
@@ -208,11 +209,14 @@ double EnergyMonitor::calcIrms(unsigned int Number_of_Samples)
     
     
     // 2) sum
-    // if (sqI > 1.0) sumI += sqI;
-    sumI += sqI;
+    if (sqI > 4.0) enable_sumI = 1;
+    if (enable_sumI) sumI += sqI;
+    // sumI += sqI;
     // sumI += sqI;
     // Serial.print("* sqI = ");
     // Serial.println(sqI);
+    // Serial.print("* sumI = ");
+    // Serial.println(sumI/10);
     // Serial.print("********* sumI = ");
     // Serial.println(sumI);
     // Serial.print("SupplyVoltage = ");
@@ -225,7 +229,12 @@ double EnergyMonitor::calcIrms(unsigned int Number_of_Samples)
   double I_RATIO = ICAL *((SupplyVoltage/1000.0) / (ADC_COUNTS));
   Irms = I_RATIO * sqrt(sumI / Number_of_Samples);
 
-  //Reset accumulators
+  // Reset accumulators
+  // Serial.print("*  sumI= ");
+  // Serial.println(sumI);
+  // Serial.print("*  I_RATIO= ");
+  // Serial.println(I_RATIO);
+  enable_sumI = 0;
   sumI = 0;
   //--------------------------------------------------------------------------------------
 
