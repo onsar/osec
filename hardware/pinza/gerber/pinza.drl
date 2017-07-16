@@ -1,5 +1,5 @@
 M48
-;DRILL file {KiCad 4.0.2+dfsg1-stable} date sáb 03 jun 2017 08:23:03 CEST
+;DRILL file {KiCad 4.0.2+dfsg1-stable} date lun 19 jun 2017 13:44:02 CEST
 ;FORMAT={-:-/ absolute / inch / decimal}
 FMAT,2
 INCH,TZ
@@ -14,8 +14,10 @@ G05
 M72
 T1
 X4.3583Y-4.0276
-X4.7559Y-3.9055
-X4.7559Y-3.9843
+X4.75Y-3.7713
+X4.75Y-3.85
+X5.35Y-4.0213
+X5.35Y-4.1
 T2
 X4.3583Y-3.9291
 T3
