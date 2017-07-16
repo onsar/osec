@@ -10,7 +10,7 @@
 #include <ESP8266WebServer.h>
 #include <DallasTemperature.h>
 
-#define ONE_WIRE_BUS D1
+#define ONE_WIRE_BUS D2
 
 
 const char* host = "api.thingspeak.com"; // Your domain  
