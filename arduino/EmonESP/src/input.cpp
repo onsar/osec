@@ -33,6 +33,7 @@ boolean input_get(String& data)
 {
   boolean gotData = false;
 
+
   // If data from test API e.g `http://<IP-ADDRESS>/input?string=CT1:3935,CT2:325,T1:12.5,T2:16.9,T3:11.2,T4:34.7`
   if(input_string.length() > 0) {
     data = input_string;
@@ -45,6 +46,13 @@ boolean input_get(String& data)
     data = Serial.readStringUntil('\n');
     gotData = true;
   }
+  
+// If data received on String from .ino
+ else if(data.length() > 0) {
+    gotData = true;
+  }
+
+  
 
   if(gotData)
   {

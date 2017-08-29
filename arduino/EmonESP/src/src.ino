@@ -74,7 +74,9 @@ void loop()
   web_server_loop();
   wifi_loop();
 
+  // delay(10000);
   String input = "";
+  // input = "ct1:3935,ct2:325,t1:12.5,t2:16.9,t3:11.2,t4:34.7";
   boolean gotInput = input_get(input);
 
   if (wifi_mode == WIFI_MODE_STA || wifi_mode == WIFI_MODE_AP_AND_STA)

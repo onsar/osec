@@ -209,9 +209,8 @@ double EnergyMonitor::calcIrms(unsigned int Number_of_Samples)
     
     
     // 2) sum
-    if (sqI > 4.0) enable_sumI = 1;
+    if (sqI > 1.0) enable_sumI = 1;
     if (enable_sumI) sumI += sqI;
-    // sumI += sqI;
     // sumI += sqI;
     // Serial.print("* sqI = ");
     // Serial.println(sqI);
@@ -225,6 +224,9 @@ double EnergyMonitor::calcIrms(unsigned int Number_of_Samples)
   // uint32_t end_time= millis();
   // Serial.println(init_time);
   // Serial.println(end_time);
+  // Serial.print("offsetI = ");
+  // Serial.println(offsetI);
+
 
   double I_RATIO = ICAL *((SupplyVoltage/1000.0) / (ADC_COUNTS));
   Irms = I_RATIO * sqrt(sumI / Number_of_Samples);
