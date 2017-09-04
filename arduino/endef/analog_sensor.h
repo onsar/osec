@@ -18,7 +18,7 @@
 
 #define  SENSOR_NAME_1 "Inten_1" // nombre del sensor
 #define  INPUT_1  0 // pin de entrada analógica
-#define  FACTOR_1 12.5;
+#define  FACTOR_1 25;
 
 #define  SENSOR_NAME_2 "Inten_2" // nombre del sensor
 #define  INPUT_2  1 // pin de entrada analógica

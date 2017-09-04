@@ -3,7 +3,7 @@
 // ******** CONFIGURACION WIFI ********
 // *******************************************************
 
-#define AGENT "Hacienda"
+#define AGENT "obra2"
 
 // #define SSID "Invitados"
 // #define PASS ""
@@ -11,8 +11,8 @@
 // #define PASS "Latorre64"
 // #define SSID "casaelobrero"
 // #define PASS "lacosamasbonitadelmundo"
-#define SSID "ENDEF"
-#define PASS "87654321"
+ #define SSID "ENDEF"
+ #define PASS "87654321"
 // #define SSID "DELABS"
 // #define PASS "dellmacmolaano"
 #define IP "193.146.117.35"

@@ -1,0 +1,11 @@
+
+GND     GND
+5v	    VCC
+CH_PD  	3v
+GND     GPIO_15
+TX	    RX
+RX	    TX 
+GND     GPIO_0
+RST open-> gnd -> open
+
+./esptool.py —port /dev/ttyUSB0 write_flash 0x000000 ESP8266_AT_V00180902_04.bin
