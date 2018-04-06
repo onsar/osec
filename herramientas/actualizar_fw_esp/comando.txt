@@ -1,11 +1,25 @@
+* Install the necessary packages in your Linux 
+sudo apt-get install build-essential python-dev
+sudo apt install python-pip
+pip install pyserial
 
+* download the upload tool:
+git clone https://github.com/espressif/esptool
+
+* connect the pins as follow
 GND     GND
-5v	    VCC
+5v	VCC
 CH_PD  	3v
-GND     GPIO_15
-TX	    RX
-RX	    TX 
+GPIO_15 GND
 GND     GPIO_0
+TX      RX
+RX      TX 
+
+* restart the ESP
 RST open-> gnd -> open
 
-./esptool.py —port /dev/ttyUSB0 write_flash 0x000000 ESP8266_AT_V00180902_04.bin
+* remove the ESP firmware
+esptool.py erase_flash
+
+* upload the firmwareremove the firmware
+sudo ./esptool.py --port /dev/ttyUSB0 write_flash 0x000000 ESP8266_AT_V00180902_04.bin
